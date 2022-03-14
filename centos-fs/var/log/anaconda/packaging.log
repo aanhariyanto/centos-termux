@@ -1,0 +1,817 @@
+21:49:22,267 INF packaging: setting DNF platform id to: platform:el8
+21:49:22,279 DBG packaging: Dnf configuration:
+[main]
+assumeno = 0
+assumeyes = 0
+autocheck_running_kernel = 1
+bandwidth = 0
+best = 1
+bugtracker_url = https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&component=dnf
+cachedir = /tmp/dnf.cache
+cacheonly = 0
+check_config_file_age = 1
+clean_requirements_on_remove = 1
+color = auto
+color_list_available_downgrade = dim,cyan
+color_list_available_install = normal
+color_list_available_reinstall = bold,underline,green
+color_list_available_upgrade = bold,blue
+color_list_installed_extra = bold,red
+color_list_installed_newer = bold,yellow
+color_list_installed_older = bold
+color_list_installed_reinstall = normal
+color_search_match = bold
+color_update_installed = normal
+color_update_local = bold
+color_update_remote = normal
+config_file_path = /etc/dnf/dnf.conf
+debug_solver = 0
+debuglevel = 2
+defaultyes = 0
+deltarpm = 1
+deltarpm_percentage = 75
+disable_excludes = []
+diskspacecheck = 1
+enabled = 1
+enablegroups = 1
+errorlevel = 3
+exclude = []
+excludepkgs = []
+exit_on_lock = 0
+fastestmirror = 0
+gpgcheck = 0
+gpgkey_dns_verification = 0
+group_package_types = [mandatory, default, conditional]
+history_list_view = commands
+history_record = 1
+history_record_packages = [dnf, rpm]
+ignorearch = 0
+includepkgs = []
+install_weak_deps = 0
+installonly_limit = 3
+installonlypkgs = [kernel, kernel-PAE, installonlypkg(kernel), installonlypkg(kernel-module), installonlypkg(vm), multiversion(kernel)]
+installroot = /mnt/sysimage
+ip_resolve = whatever
+keepcache = 0
+localpkg_gpgcheck = 0
+log_rotate = 4
+log_size = 1048576
+logdir = /tmp/
+max_parallel_downloads = 3
+metadata_expire = 172800
+metadata_timer_sync = 10800
+minrate = 1000
+module_platform_id = platform:el8
+multilib_policy = best
+obsoletes = 1
+password = 
+persistdir = /mnt/sysimage/var/lib/dnf
+pluginconfpath = [/tmp/dnf.pluginconf]
+pluginpath = [/usr/lib/python3.6/site-packages/dnf-plugins]
+plugins = 1
+protected_packages = [dnf, systemd, systemd-udev, dnf]
+proxy = 
+proxy_auth_method = any
+recent = 7
+repo_gpgcheck = 0
+reposdir = [/etc/yum.repos.d, /etc/anaconda.repos.d, /tmp/updates/anaconda.repos.d, /tmp/product/anaconda.repos.d]
+reset_nice = 1
+retries = 10
+rpmverbosity = info
+showdupesfromrepos = 0
+skip_broken = 0
+skip_if_unavailable = 0
+sslcacert = 
+sslclientcert = 
+sslclientkey = 
+sslverify = 1
+strict = 1
+system_cachedir = /var/cache/dnf
+throttle = 0
+timeout = 30
+transformdb = 1
+tsflags = []
+upgrade_group_objects_upgrade = 1
+username = 
+varsdir = [/etc/dnf/vars, /etc/yum/vars]
+zchunk = 1
+
+21:49:26,349 INF packaging: configuring base repo
+21:49:26,419 INF packaging: Trying to download '.treeinfo'
+21:49:26,444 DBG packaging: Retrieved '.treeinfo' from http://qa.centos.org/centos/8/BaseOS/aarch64/os/
+21:49:26,461 DBG packaging: Treeinfo points base repository to http://qa.centos.org/centos/8/BaseOS/aarch64/os/.
+21:49:26,462 DBG packaging: releasever from http://qa.centos.org/centos/8/BaseOS/aarch64/os/ is 8
+21:49:26,465 INF packaging: added repo: 'anaconda' - http://qa.centos.org/centos/8/BaseOS/aarch64/os/
+21:49:26,480 DBG dnf: repo: downloading from remote: anaconda
+21:49:26,597 INF packaging: enabled repo: '' - ['http://qa.centos.org/centos/8/BaseOS/aarch64/os/'] and got repomd
+21:49:26,599 DBG packaging: repo koji-override-0: mirrorlist None, baseurl http://qa.centos.org/centos/8/BaseOS/aarch64/os/, metalink False
+21:49:26,601 INF packaging: added repo: 'koji-override-0' - http://qa.centos.org/centos/8/BaseOS/aarch64/os/
+21:49:26,602 DBG packaging: repo koji-override-1: mirrorlist None, baseurl http://qa.centos.org/centos/8/AppStream/aarch64/os/, metalink False
+21:49:26,604 INF packaging: added repo: 'koji-override-1' - http://qa.centos.org/centos/8/AppStream/aarch64/os/
+21:49:26,605 DBG packaging: repo AppStream: mirrorlist None, baseurl http://qa.centos.org/centos/8/BaseOS/aarch64/os/../../../AppStream/aarch64/os/, metalink False
+21:49:26,607 INF packaging: added repo: 'AppStream' - http://qa.centos.org/centos/8/BaseOS/aarch64/os/../../../AppStream/aarch64/os/
+21:49:26,610 DBG dnf: repo: downloading from remote: koji-override-0
+21:49:26,684 INF packaging: enabled repo: '' - ['http://qa.centos.org/centos/8/BaseOS/aarch64/os/'] and got repomd
+21:49:26,686 DBG dnf: repo: downloading from remote: koji-override-1
+21:49:26,797 INF packaging: enabled repo: '' - ['http://qa.centos.org/centos/8/AppStream/aarch64/os/'] and got repomd
+21:49:26,798 DBG dnf: repo: downloading from remote: AppStream
+21:49:26,909 INF packaging: enabled repo: '' - ['http://qa.centos.org/centos/8/BaseOS/aarch64/os/../../../AppStream/aarch64/os/'] and got repomd
+21:49:26,913 DBG dnf: repo: using cache for: anaconda
+21:49:26,914 DBG packaging: repo anaconda: _sync_metadata success from ['http://qa.centos.org/centos/8/BaseOS/aarch64/os/']
+21:49:26,915 DBG dnf: repo: using cache for: koji-override-0
+21:49:26,916 DBG packaging: repo koji-override-0: _sync_metadata success from ['http://qa.centos.org/centos/8/BaseOS/aarch64/os/']
+21:49:26,917 DBG dnf: repo: using cache for: koji-override-1
+21:49:26,918 DBG packaging: repo koji-override-1: _sync_metadata success from ['http://qa.centos.org/centos/8/AppStream/aarch64/os/']
+21:49:26,919 DBG dnf: repo: using cache for: AppStream
+21:49:26,920 DBG packaging: repo AppStream: _sync_metadata success from ['http://qa.centos.org/centos/8/BaseOS/aarch64/os/../../../AppStream/aarch64/os/']
+21:49:26,924 DBG dnf: repo: using cache for: anaconda
+21:49:29,278 DBG dnf: anaconda: using metadata from Sun 12 Jan 2020 01:45:24 AM UTC.
+21:49:29,279 DBG dnf: repo: using cache for: koji-override-0
+21:49:31,635 DBG dnf: koji-override-0: using metadata from Sun 12 Jan 2020 01:45:24 AM UTC.
+21:49:31,636 DBG dnf: repo: using cache for: koji-override-1
+21:49:35,467 DBG dnf: koji-override-1: using metadata from Sun 12 Jan 2020 01:44:52 AM UTC.
+21:49:35,469 DBG dnf: repo: using cache for: AppStream
+21:49:39,228 DBG dnf: AppStream: using metadata from Sun 12 Jan 2020 01:44:52 AM UTC.
+21:49:39,231 INF dnf: Last metadata expiration check: 0:00:03 ago on Mon 13 Jan 2020 09:49:26 PM UTC.
+21:49:42,176 Level 8 dnf: timer: sack setup: 15255 ms
+21:49:42,177 Level 8 dnf: Getting group metadata
+21:49:42,180 Level 8 dnf: Adding group file from repository: anaconda
+21:49:42,263 Level 8 dnf: Adding group file from repository: koji-override-0
+21:49:42,382 Level 8 dnf: Adding group file from repository: koji-override-1
+21:49:42,527 Level 8 dnf: Adding group file from repository: AppStream
+21:49:42,715 Level 8 dnf: timer: loading comps: 537 ms
+21:49:43,000 INF packaging: Failed to parse proxy for test if repo available : No host url
+21:49:43,012 INF packaging: Failed to parse proxy for test if repo available : No host url
+21:49:43,023 INF packaging: Failed to parse proxy for test if repo available : No host url
+21:49:43,034 INF packaging: Failed to parse proxy for test if repo available : No host url
+21:49:44,239 DBG packaging: Input mount points: {'/dev': Size (1.9200439453125 GiB), '/dev/shm': Size (1.94879150390625 GiB), '/run': Size (1.89068603515625 GiB), '/sys/fs/cgroup': Size (1.94879150390625 GiB), '/': Size (943.875 MiB), '/tmp': Size (1.9093017578125 GiB), '/mnt/sysimage': Size (8.4983398430049419403076171875 GiB)}
+21:49:44,242 INF packaging: Estimated size: download 0 B & install 2.79 GiB
+21:49:44,243 INF packaging: Sufficient mountpoints found: {'/': Size (943.875 MiB), '/tmp': Size (1.9093017578125 GiB), '/mnt/sysimage': Size (8.4983398430049419403076171875 GiB)}
+21:49:44,245 DBG packaging: Install + download space required 2.79 GiB
+21:49:50,699 INF packaging: checking software selection
+21:49:50,701 DBG packaging: disabling modules: []
+21:49:50,864 DBG packaging: enabling modules: []
+21:49:52,461 DBG packaging: applying DNF package/group/module selection
+21:49:52,463 INF packaging: skipping core group due to %%packages --nocore; system may not be complete
+21:49:52,463 INF packaging: excluded package: 'brotli'
+21:49:52,464 INF packaging: excluded package: 'dosfstools'
+21:49:52,465 INF packaging: excluded package: 'e2fsprogs'
+21:49:52,465 INF packaging: excluded package: 'firewalld'
+21:49:52,466 INF packaging: excluded package: 'fuse-libs'
+21:49:52,467 INF packaging: excluded package: 'gettext*'
+21:49:52,468 INF packaging: excluded package: 'gnupg2-smime'
+21:49:52,468 INF packaging: excluded package: 'grub\*'
+21:49:52,469 INF packaging: excluded package: 'iptables'
+21:49:52,470 INF packaging: excluded package: 'kernel'
+21:49:52,470 INF packaging: excluded package: 'libss'
+21:49:52,471 INF packaging: excluded package: 'os-prober*'
+21:49:52,472 INF packaging: excluded package: 'pinentry'
+21:49:52,473 INF packaging: excluded package: 'qemu-guest-agent'
+21:49:52,473 INF packaging: excluded package: 'shared-mime-info'
+21:49:52,474 INF packaging: excluded package: 'trousers'
+21:49:52,475 INF packaging: excluded package: 'xfsprogs'
+21:49:52,475 INF packaging: excluded package: 'xkeyboard-config'
+21:49:52,476 INF packaging: selected package: 'bash'
+21:49:52,477 INF packaging: selected package: 'binutils'
+21:49:52,478 INF packaging: selected package: 'centos-release'
+21:49:52,478 INF packaging: selected package: 'coreutils-single'
+21:49:52,479 INF packaging: selected package: 'glibc-minimal-langpack'
+21:49:52,480 INF packaging: selected package: 'hostname'
+21:49:52,480 INF packaging: selected package: 'iputils'
+21:49:52,481 INF packaging: selected package: 'less'
+21:49:52,482 INF packaging: selected package: 'rootfiles'
+21:49:52,482 INF packaging: selected package: 'tar'
+21:49:52,483 INF packaging: selected package: 'vim-minimal'
+21:49:52,484 INF packaging: selected package: 'yum'
+21:49:52,485 INF packaging: selected package: 'kexec-tools'
+21:49:52,485 ERR packaging: kernel: failed to select a kernel from []
+21:49:52,486 DBG packaging: selected package: e2fsprogs, requirement for ['storage'] IGNORED because excluded
+21:49:52,487 DBG packaging: selected package: firewalld, requirement for ['firewall'] IGNORED because excluded
+21:49:52,488 DBG packaging: selected package: langpacks-en, requirement for ['langpacks'] 
+21:49:52,490 DBG packaging: transaction include list
+21:49:52,491 DBG packaging: ['bash', 'binutils', 'centos-release', 'coreutils-single', 'glibc-minimal-langpack', 'hostname', 'iputils', 'less', 'rootfiles', 'tar', 'vim-minimal', 'yum', 'kexec-tools', 'langpacks-en']
+21:49:52,491 DBG packaging: transaction exclude list
+21:49:52,492 DBG packaging: ['@core', 'brotli', 'dosfstools', 'e2fsprogs', 'firewalld', 'fuse-libs', 'gettext*', 'gnupg2-smime', 'grub\\*', 'iptables', 'kernel', 'libss', 'os-prober*', 'pinentry', 'qemu-guest-agent', 'shared-mime-info', 'trousers', 'xfsprogs', 'xkeyboard-config']
+21:49:52,716 Level 8 dnf: timer: depsolve: 185 ms
+21:49:52,742 INF packaging: checking dependencies: success
+21:49:52,870 DBG packaging: Size from DNF: 312.08 MiB
+21:49:52,871 DBG packaging: Bonus size 185.23 MiB by number of files 31613
+21:49:52,872 DBG packaging: Total size required 547.05 MiB
+21:49:52,906 DBG packaging: Input mount points: {'/dev': Size (1.9200439453125 GiB), '/dev/shm': Size (1.94879150390625 GiB), '/run': Size (1.8907470703125 GiB), '/sys/fs/cgroup': Size (1.94879150390625 GiB), '/': Size (943.8515625 MiB), '/tmp': Size (1.9093017578125 GiB), '/mnt/sysimage': Size (9.227725982666015625 GiB), '/mnt/sysimage/dev/shm': Size (1.94879150390625 GiB)}
+21:49:52,909 INF packaging: Estimated size: download 213.97 MiB & install 547.05 MiB
+21:49:52,910 INF packaging: Sufficient mountpoints found: {'/': Size (943.8515625 MiB), '/tmp': Size (1.9093017578125 GiB), '/mnt/sysimage': Size (9.227725982666015625 GiB)}
+21:49:52,912 DBG packaging: Install + download space required 761.01 MiB
+21:49:52,913 INF packaging: 172 packages selected totalling 761.01 MiB
+21:49:53,045 DBG packaging: Size from DNF: 312.08 MiB
+21:49:53,046 DBG packaging: Bonus size 185.23 MiB by number of files 31613
+21:49:53,047 DBG packaging: Total size required 547.05 MiB
+21:49:53,070 DBG packaging: Input mount points: {'/dev': Size (1.9200439453125 GiB), '/dev/shm': Size (1.94879150390625 GiB), '/run': Size (1.8907470703125 GiB), '/sys/fs/cgroup': Size (1.94879150390625 GiB), '/': Size (943.8515625 MiB), '/tmp': Size (1.9093017578125 GiB), '/mnt/sysimage': Size (9.227725982666015625 GiB), '/mnt/sysimage/dev/shm': Size (1.94879150390625 GiB)}
+21:49:53,073 INF packaging: Estimated size: download 213.97 MiB & install 547.05 MiB
+21:49:53,075 INF packaging: Sufficient mountpoints found: {'/': Size (943.8515625 MiB), '/tmp': Size (1.9093017578125 GiB), '/mnt/sysimage': Size (9.227725982666015625 GiB)}
+21:49:53,076 INF packaging: Mountpoint /tmp picked as download location
+21:49:53,091 INF packaging: Downloading packages to /tmp/dnf.package.cache.
+21:49:54,750 INF packaging: Downloading packages finished.
+21:49:54,844 INF dnf: Running transaction check
+21:49:55,184 INF dnf: Transaction check succeeded.
+21:49:55,185 INF dnf: Running transaction test
+21:49:57,660 INF dnf: Transaction test succeeded.
+21:49:57,661 Level 8 dnf: timer: transaction test: 2476 ms
+21:49:57,662 INF dnf: Running transaction
+21:49:57,666 DBG dnf: RPMDB altered outside of DNF.
+21:49:59,012 Level 8 dnf: RPM transaction start.
+21:50:00,043 INF packaging: Configuring (running scriptlet for): filesystem-3.8-2.el8.aarch64 1557534032 ab20ad82d06371112c442d6bef7dc1b7af1bd4d51ee880868c2a079034e57934
+21:50:01,293 INF packaging: Installed: libgcc-8.3.1-4.5.el8.aarch64 1573020941 44b6c368421a973bc5abc4707af78835f35a642af23a1f72d0a73f448dc4ec1a
+21:50:01,347 INF packaging: Configuring (running scriptlet for): libgcc-8.3.1-4.5.el8.aarch64 1573020941 44b6c368421a973bc5abc4707af78835f35a642af23a1f72d0a73f448dc4ec1a
+21:50:01,350 INF packaging: Installed: python3-setuptools-wheel-39.2.0-5.el8.noarch 1573572823 fe32f87d975ed2bd5f1c854961caa05fec47f6a5f9bd2a28610be907aeb71f4e
+21:50:01,384 INF packaging: Installed: python3-pip-wheel-9.0.3-15.el8.noarch 1573239287 45192c93402f5ee029f8d9a63a36278e02a743c48ab064849469ad8153d1a555
+21:50:01,481 INF packaging: Installed: centos-gpg-keys-8.1-1.1911.0.8.el8.noarch 1577978521 e32102ff6751b1fa27b81baed961c43125840a1bc84a9d01f8b539ba4a3b30bc
+21:50:01,494 INF packaging: Installed: centos-release-8.1-1.1911.0.8.el8.aarch64 1577978521 1e3dbe18935b3a3b316cd19989cdd820c6cedea7403a8f39b2fd1fb112c29194
+21:50:01,525 INF packaging: Installed: centos-repos-8.1-1.1911.0.8.el8.aarch64 1577978521 89f8f6d41d58b54bb17ca83704c408cb8d7788302199f9f2ee7ab6f01f4d8ac2
+21:50:01,546 INF packaging: Installed: setup-2.12.2-2.el8_1.1.noarch 1578074652 7beab7df092f567bc07b3dd0b99c85f85fdba9117927e87f0b42d4d2769d3e2d
+21:50:01,618 INF packaging: Configuring (running scriptlet for): setup-2.12.2-2.el8_1.1.noarch 1578074652 7beab7df092f567bc07b3dd0b99c85f85fdba9117927e87f0b42d4d2769d3e2d
+21:50:01,652 INF packaging: Installed: filesystem-3.8-2.el8.aarch64 1557534032 ab20ad82d06371112c442d6bef7dc1b7af1bd4d51ee880868c2a079034e57934
+21:50:02,607 INF packaging: Installed: basesystem-11-5.el8.noarch 1557533944 48226934763e4c412c1eb65df314e6879720b4b1ebcb3d07c126c9526639cb68
+21:50:02,617 INF packaging: Installed: tzdata-2019c-1.el8.noarch 1569937645 ef86bf42e76d2a1d9dc507c66665eb7fa1be8c7418d8d7906d853794f179449e
+21:50:05,396 INF packaging: Installed: ncurses-base-6.1-7.20180224.el8.noarch 1557535702 1dfed63c2b675064c87d3e95c433a1c4515b24c28a7815e643e6f3d84814e79d
+21:50:05,748 INF packaging: Installed: pcre2-10.32-1.el8.aarch64 1557535789 4bc79516dafe99ec1157d1733d6f5873f1add668f022051794d89f92de5616ee
+21:50:05,809 INF packaging: Installed: libselinux-2.9-2.1.el8.aarch64 1573486606 a10c3bbe22bccd0e90b651cabb33d952b7d7f9023d65d2a5b5e85f04178a8060
+21:50:05,842 INF packaging: Installed: ncurses-libs-6.1-7.20180224.el8.aarch64 1557535702 4d62bee2b38b7ae79937139f3e246ddefd184da953a70263d633f770d30b60c3
+21:50:05,962 INF packaging: Installed: glibc-minimal-langpack-2.28-72.el8.aarch64 1573010757 22ee7b416d8a56ddd312f1bb1ad51358de2ab09511a08338b2f39b5b1e5d40e1
+21:50:05,965 INF packaging: Installed: glibc-common-2.28-72.el8.aarch64 1573010757 d90a2e23630cc72b13816de2fc8c3eacf0e3a8196d1886e51affee456f8ee6f1
+21:50:06,266 INF packaging: Configuring (running scriptlet for): glibc-2.28-72.el8.aarch64 1573010757 09f4b5dddfa85bdd8c00059cde77ae767dc1771e857959641f138699922c02b1
+21:50:06,268 INF packaging: Installed: glibc-2.28-72.el8.aarch64 1573010757 09f4b5dddfa85bdd8c00059cde77ae767dc1771e857959641f138699922c02b1
+21:50:08,271 INF packaging: Configuring (running scriptlet for): glibc-2.28-72.el8.aarch64 1573010757 09f4b5dddfa85bdd8c00059cde77ae767dc1771e857959641f138699922c02b1
+21:50:08,318 INF packaging: Installed: bash-4.4.19-10.el8.aarch64 1573230502 b4db0c7eb9ac568e423eede22018935de0281f7a96099aa5b32fb56ae5968c40
+21:50:08,654 INF packaging: Configuring (running scriptlet for): bash-4.4.19-10.el8.aarch64 1573230502 b4db0c7eb9ac568e423eede22018935de0281f7a96099aa5b32fb56ae5968c40
+21:50:08,657 INF packaging: Installed: libsepol-2.9-1.el8.aarch64 1573234404 236c00d37f3127a7d399a11ff45f019554b8f7bfaefd12965705f9ca0d4f3908
+21:50:08,725 INF packaging: Configuring (running scriptlet for): libsepol-2.9-1.el8.aarch64 1573234404 236c00d37f3127a7d399a11ff45f019554b8f7bfaefd12965705f9ca0d4f3908
+21:50:08,758 INF packaging: Installed: zlib-1.2.11-10.el8.aarch64 1557536543 03574b773706d8912ae43d4f62b5056bd4781e44989163231ce98c7e47a211c3
+21:50:08,786 INF packaging: Installed: xz-libs-5.2.4-3.el8.aarch64 1557536539 8f141db26834b1ec60028790b130d00b14b7fda256db0df1e51b7ba8d3d40c7b
+21:50:08,812 INF packaging: Installed: bzip2-libs-1.0.6-26.el8.aarch64 1557534038 a4451cae0e8a3307228ed8ac7dc9bab7de77fcbf2004141daa7f986f5dc9b381
+21:50:08,830 INF packaging: Installed: libcap-2.26-1.el8.aarch64 1573233363 06ffc7a438bab22cdad9f191a05045ee634c78d69162369822efcbf2b4c94127
+21:50:08,874 INF packaging: Installed: libgpg-error-1.31-1.el8.aarch64 1557534857 b953729a0a2be24749aeee9f00853fdc3227737971cf052a999a37ac36387cd9
+21:50:08,942 INF packaging: Installed: info-6.5-4.el8.aarch64 1557536354 49a7e7eb36e9c3dfed9f8290e6e1ddc7ed5ccc6721888ce9bd90d9705dde118a
+21:50:08,994 INF packaging: Installed: elfutils-libelf-0.176-5.el8.aarch64 1574179287 1bdd18be6f185964f70b98dccc9ae9202e2461ac045143d118829143cfdd5e53
+21:50:09,050 INF packaging: Installed: libcom_err-1.44.6-3.el8.aarch64 1573233254 6fa43da699a765578a3e9445bb4f8e81cfa0488241660722d01d2735ce740cf6
+21:50:09,071 INF packaging: Configuring (running scriptlet for): libcom_err-1.44.6-3.el8.aarch64 1573233254 6fa43da699a765578a3e9445bb4f8e81cfa0488241660722d01d2735ce740cf6
+21:50:09,091 INF packaging: Installed: libxcrypt-4.1.1-4.el8.aarch64 1557535351 2221fb6f38fb36025c3283afe04e009bb1cc688144e71c5a9edc6717f22012c0
+21:50:09,125 INF packaging: Installed: libxml2-2.9.7-5.el8.aarch64 1557535440 61705d4ff0dfacad59f9a1a34b3f224a692d8cba28b6a2a5d8cf47b99e5d8957
+21:50:09,263 INF packaging: Installed: sqlite-libs-3.26.0-3.el8.aarch64 1557537182 879d2b7e8c9a78b65831a8cf32bac397fafcff4f6376435a2b36f488a6d52024
+21:50:09,361 INF packaging: Installed: expat-2.2.5-3.el8.aarch64 1557534216 6b081b6a5b780eefe8fc5f8f6c4291b7558ddd6107de8a8bd9610799be9662e4
+21:50:09,394 INF packaging: Installed: libstdc++-8.3.1-4.5.el8.aarch64 1573020941 8164adb9d244bea61d74ec7cd0ea5ecb5045e7132540ff08aad6df8a07e96168
+21:50:09,539 INF packaging: Configuring (running scriptlet for): libstdc++-8.3.1-4.5.el8.aarch64 1573020941 8164adb9d244bea61d74ec7cd0ea5ecb5045e7132540ff08aad6df8a07e96168
+21:50:09,558 INF packaging: Installed: libuuid-2.32.1-17.el8.aarch64 1573243582 f96200d76a55bff931f994c48dfa77c933c6a3eb4ec018cccc706c7c62b26f8a
+21:50:09,581 INF packaging: Configuring (running scriptlet for): libuuid-2.32.1-17.el8.aarch64 1573243582 f96200d76a55bff931f994c48dfa77c933c6a3eb4ec018cccc706c7c62b26f8a
+21:50:09,599 INF packaging: Installed: popt-1.16-14.el8.aarch64 1557535927 f58ce80c4f54569359e6f051b84d11cdce1bbe0f79ad51228ca89ecc614f937d
+21:50:09,626 INF packaging: Installed: chkconfig-1.11-1.el8.aarch64 1557533941 172da3cd3ea13036c2a6cbe953b5d5b2b41c9a3aa7a2d6fdb5efd4c1d51174f3
+21:50:09,704 INF packaging: Installed: readline-7.0-10.el8.aarch64 1557535996 ef74f2c65ed0e38dd021177d6e59fcdf7fb8de8929b7544b7a6f0709eff6562c
+21:50:09,754 INF packaging: Configuring (running scriptlet for): readline-7.0-10.el8.aarch64 1557535996 ef74f2c65ed0e38dd021177d6e59fcdf7fb8de8929b7544b7a6f0709eff6562c
+21:50:09,785 INF packaging: Installed: gmp-1:6.1.2-10.el8.aarch64 1573232447 8d407f8ad961169fca2ee5e22e824cbc2d2b5fedca9701896cc492d4cb788603
+21:50:09,876 INF packaging: Configuring (running scriptlet for): gmp-1:6.1.2-10.el8.aarch64 1573232447 8d407f8ad961169fca2ee5e22e824cbc2d2b5fedca9701896cc492d4cb788603
+21:50:09,895 INF packaging: Installed: json-c-0.13.1-0.2.el8.aarch64 1557583395 e5f07ebcc0dabd9cc5a460c3fd5db8bbb96276a48132ea52ce2b1ddb7ead6320
+21:50:09,916 INF packaging: Installed: libattr-2.4.48-3.el8.aarch64 1557533888 6a6db7eab6e53dccc54116d2ddf86b02db4cff332a58b868f7ba778a99666c58
+21:50:09,929 INF packaging: Installed: libacl-2.2.53-1.el8.aarch64 1557533888 c4cfed85e5a0db903ad134b4327b1714e5453fcf5c4348ec93ab344860a970ef
+21:50:09,943 INF packaging: Installed: coreutils-single-8.30-6.el8.aarch64 1557591004 1d320b375be9ef02717f1546c3d5058262317c5a7cc12b1b5e2173149a93b962
+21:50:10,264 INF packaging: Installed: sed-4.5-1.el8.aarch64 1557536195 fbecd3eaccc7aed98b42e88280d2ee9104c52d3329f9139b291527fc30d5fd02
+21:50:10,323 INF packaging: Configuring (running scriptlet for): sed-4.5-1.el8.aarch64 1557536195 fbecd3eaccc7aed98b42e88280d2ee9104c52d3329f9139b291527fc30d5fd02
+21:50:10,342 INF packaging: Installed: libblkid-2.32.1-17.el8.aarch64 1573243582 8d01474037b685e8a64ebe54126eee8fcf6384c26aa924328cae995a749ed10e
+21:50:10,380 INF packaging: Configuring (running scriptlet for): libblkid-2.32.1-17.el8.aarch64 1573243582 8d01474037b685e8a64ebe54126eee8fcf6384c26aa924328cae995a749ed10e
+21:50:10,407 INF packaging: Installed: libmount-2.32.1-17.el8.aarch64 1573243582 51f25e1c76760e9706a191557827f19e93fe2a4ba69d822ec710125b480f5e5b
+21:50:10,459 INF packaging: Configuring (running scriptlet for): libmount-2.32.1-17.el8.aarch64 1573243582 51f25e1c76760e9706a191557827f19e93fe2a4ba69d822ec710125b480f5e5b
+21:50:10,479 INF packaging: Installed: libcap-ng-0.7.9-4.el8.aarch64 1557534755 1a97d9d8d347c084cf4b7ac4c8ac6e4914eae7a18062644aff5ad944583207c5
+21:50:10,496 INF packaging: Installed: audit-libs-3.0-0.10.20180831git0047a6c.el8.aarch64 1557533998 59a12bf8bec4313297320c5c13da007e1f0376b0d0ab9e8ef7747370e672f627
+21:50:10,534 INF packaging: Installed: libffi-3.1-21.el8.aarch64 1573233544 bc2fc704cf93c3d23b5dd08190504888c5c5de9e36ad5503bca83918c9a0f0eb
+21:50:10,553 INF packaging: Installed: libsmartcols-2.32.1-17.el8.aarch64 1573243582 6bb601fd3931e40a36c57150fcb3eb7747e8b8febb8a933f7047cded5c249f95
+21:50:10,593 INF packaging: Configuring (running scriptlet for): libsmartcols-2.32.1-17.el8.aarch64 1573243582 6bb601fd3931e40a36c57150fcb3eb7747e8b8febb8a933f7047cded5c249f95
+21:50:10,612 INF packaging: Installed: lua-libs-5.3.4-11.el8.aarch64 1573235119 914f1d8cf5385ec874ac88b00f5ae99e77be48aa6c7157a2e0c1c5355c415c94
+21:50:10,643 INF packaging: Installed: lz4-libs-1.8.1.2-4.el8.aarch64 1557535455 b646ce7481e0c17b0b5ae21d606e96496a56bf782e94247968061e746d97b4ce
+21:50:10,662 INF packaging: Installed: p11-kit-0.23.14-5.el8_0.aarch64 1561995890 fdf69d6c98f6a9bae8a280b16a043841bb086470c3366e0ec75eb46c2ade7013
+21:50:10,757 INF packaging: Configuring (running scriptlet for): p11-kit-0.23.14-5.el8_0.aarch64 1561995890 fdf69d6c98f6a9bae8a280b16a043841bb086470c3366e0ec75eb46c2ade7013
+21:50:10,778 INF packaging: Installed: libgcrypt-1.8.3-4.el8.aarch64 1573233696 349fb3fe51236f9c0608cc94c035853292fed724bcc4a37f7f7edd3523e1099d
+21:50:10,873 INF packaging: Configuring (running scriptlet for): libgcrypt-1.8.3-4.el8.aarch64 1573233696 349fb3fe51236f9c0608cc94c035853292fed724bcc4a37f7f7edd3523e1099d
+21:50:10,892 INF packaging: Installed: gzip-1.9-9.el8.aarch64 1573232646 88ecbc25e066f0dbd0cde2142c5e1fa27a68b349b66f0ee638086c03c96d1dc6
+21:50:10,960 INF packaging: Configuring (running scriptlet for): gzip-1.9-9.el8.aarch64 1573232646 88ecbc25e066f0dbd0cde2142c5e1fa27a68b349b66f0ee638086c03c96d1dc6
+21:50:10,975 INF packaging: Installed: cracklib-2.9.6-15.el8.aarch64 1557533931 54efb853142572e1c2872e351838fc3657b662722ff6b2913d1872d4752a0eb8
+21:50:11,032 INF packaging: Installed: libunistring-0.9.9-3.el8.aarch64 1557535383 707429ccb3223628d55097a162cd0d3de1bd00b48800677c1099931b0f019e80
+21:50:11,145 INF packaging: Installed: libidn2-2.2.0-1.el8.aarch64 1573233666 b62589101a60a365ef34447cae78f62e6dba560d403dc56c87036709ea00ad88
+21:50:11,186 INF packaging: Installed: libassuan-2.5.1-3.el8.aarch64 1557534744 cf4d477f18ecd97470d1bc50c0e442de6f7d5db74829221d0f9b1ddfc9a71dab
+21:50:11,216 INF packaging: Installed: file-libs-5.33-8.el8.aarch64 1557534266 b76126f36f78f85da4f7b3614e7f69b4ee5067e6319468d1eec609fb85858c31
+21:50:11,438 INF packaging: Installed: gdbm-libs-1:1.18-1.el8.aarch64 1557534276 a7d04ae40ad91ba0ea93e4971a35585638f6adf8dbe1ed4849f643b6b64a5871
+21:50:11,464 INF packaging: Installed: keyutils-libs-1.5.10-6.el8.aarch64 1557534531 54e61e873e45000433bec3387112f7ead3c4cb9731045caa8033ff5b14ee46b1
+21:50:11,481 INF packaging: Installed: libtasn1-4.13-3.el8.aarch64 1557535255 3401ccfb7fd08c12578b6257b4dac7e94ba5f4cd70fc6a234fd90bb99d1bb108
+21:50:11,513 INF packaging: Configuring (running scriptlet for): libtasn1-4.13-3.el8.aarch64 1557535255 3401ccfb7fd08c12578b6257b4dac7e94ba5f4cd70fc6a234fd90bb99d1bb108
+21:50:11,534 INF packaging: Installed: p11-kit-trust-0.23.14-5.el8_0.aarch64 1561995890 a629464b907faa92e7d294120a95b492078e2f05122e51810c4f4912ff8f95de
+21:50:11,584 INF packaging: Configuring (running scriptlet for): p11-kit-trust-0.23.14-5.el8_0.aarch64 1561995890 a629464b907faa92e7d294120a95b492078e2f05122e51810c4f4912ff8f95de
+21:50:11,599 INF packaging: Installed: lzo-2.08-14.el8.aarch64 1557586698 6809839757bd05082ca1b8d23eac617898eda3ce34844a0d31b0a030c8cc6653
+21:50:11,623 INF packaging: Installed: pcre-8.42-4.el8.aarch64 1557587721 a8053346f758919a8e6f177d767d6372352b2b37e1c86195ab87a891ce55e692
+21:50:11,678 INF packaging: Installed: grep-3.1-6.el8.aarch64 1557534549 7ffd6e95b0554466e97346b2f41fb5279aedcb29ae07828f63d06a8dedd7cd51
+21:50:11,747 INF packaging: Configuring (running scriptlet for): grep-3.1-6.el8.aarch64 1557534549 7ffd6e95b0554466e97346b2f41fb5279aedcb29ae07828f63d06a8dedd7cd51
+21:50:11,765 INF packaging: Installed: systemd-libs-239-18.el8_1.1.aarch64 1578075311 5edcc59775d92ddaf407586159560a1215d75169ffa9b30eeeb2386be5f2c686
+21:50:11,934 INF packaging: Configuring (running scriptlet for): systemd-libs-239-18.el8_1.1.aarch64 1578075311 5edcc59775d92ddaf407586159560a1215d75169ffa9b30eeeb2386be5f2c686
+21:50:11,977 INF packaging: Installed: crypto-policies-20190807-1.git9b1477b.el8.noarch 1576516381 2d63eb375a83b7c50847e370edc668f404c1412a46b6f618ab598863996042cd
+21:50:12,154 INF packaging: Configuring (running scriptlet for): crypto-policies-20190807-1.git9b1477b.el8.noarch 1576516381 2d63eb375a83b7c50847e370edc668f404c1412a46b6f618ab598863996042cd
+21:50:12,446 INF packaging: Installed: dbus-libs-1:1.12.8-9.el8.aarch64 1573230909 26e91abcf8582e3f928ee825c45a63049669ff2ef68e9707af1d2f5d1b8f118e
+21:50:12,491 INF packaging: Configuring (running scriptlet for): dbus-libs-1:1.12.8-9.el8.aarch64 1573230909 26e91abcf8582e3f928ee825c45a63049669ff2ef68e9707af1d2f5d1b8f118e
+21:50:12,513 INF packaging: Configuring (running scriptlet for): ca-certificates-2019.2.32-80.0.el8_1.noarch 1576091956 f223fa4f5790aa54be68459c68848db6fe8dfc7f6ddde4acd4dca2434813af67
+21:50:12,526 INF packaging: Installed: ca-certificates-2019.2.32-80.0.el8_1.noarch 1576091956 f223fa4f5790aa54be68459c68848db6fe8dfc7f6ddde4acd4dca2434813af67
+21:50:12,639 INF packaging: Configuring (running scriptlet for): ca-certificates-2019.2.32-80.0.el8_1.noarch 1576091956 f223fa4f5790aa54be68459c68848db6fe8dfc7f6ddde4acd4dca2434813af67
+21:50:14,181 INF packaging: Installed: openssl-libs-1:1.1.1c-2.el8.aarch64 1573237545 ca3895e61cd5ab7f833eae7a231d7fb4d4c88c24ddb570d88e73c2625f42bd0d
+21:50:14,501 INF packaging: Configuring (running scriptlet for): openssl-libs-1:1.1.1c-2.el8.aarch64 1573237545 ca3895e61cd5ab7f833eae7a231d7fb4d4c88c24ddb570d88e73c2625f42bd0d
+21:50:14,692 INF packaging: Installed: libdb-5.3.28-37.el8.aarch64 1573233918 ad06d1753bb443403e544c02837579cb0b7836d380ca59c88cd0e89894870615
+21:50:14,850 INF packaging: Configuring (running scriptlet for): libdb-5.3.28-37.el8.aarch64 1573233918 ad06d1753bb443403e544c02837579cb0b7836d380ca59c88cd0e89894870615
+21:50:14,871 INF packaging: Installed: kmod-libs-25-13.el8.aarch64 1573233257 ae5e172502f5351ed843028ef740eba561772027a64c9a8a4d350d228fde5215
+21:50:14,901 INF packaging: Configuring (running scriptlet for): kmod-libs-25-13.el8.aarch64 1573233257 ae5e172502f5351ed843028ef740eba561772027a64c9a8a4d350d228fde5215
+21:50:14,921 INF packaging: Installed: ima-evm-utils-1.1-5.el8.aarch64 1573232742 b58f45e55741bb835ec566af2afc36cd97d8fc354b3aad96a85980cadefa968c
+21:50:14,949 INF packaging: Installed: kmod-25-13.el8.aarch64 1573233257 fcba58b071206a5d0b8ea64b4d74fad7166346a9998c7a7596bd6f18812a70c2
+21:50:14,997 INF packaging: Installed: libdb-utils-5.3.28-37.el8.aarch64 1573233918 9c174435e558ebc58198efd824803a01275831c69e8969fc567a34b6f9d07f6d
+21:50:15,095 INF packaging: Installed: libarchive-3.3.2-7.el8.aarch64 1573233541 85101969d4db13026e07b6f585a1f7bc987311058b611ad5a19ac3932ba8e14a
+21:50:15,177 INF packaging: Installed: dbus-tools-1:1.12.8-9.el8.aarch64 1573230909 ff972a44b0442d483877703a550c6742b8c49e1a01e271f0ad4a899a3362a90c
+21:50:15,212 INF packaging: Installed: dhcp-libs-12:4.3.6-34.el8.aarch64 1574177723 1c66b5647558403d0d68364bf76f1f00a640fa86562f9f1ff6674f273230235c
+21:50:15,240 INF packaging: Installed: libusbx-1.0.22-1.el8.aarch64 1557535350 24145e86f4b02fac2175f3d8e9f38749618a8b770b45ae2a5a92311c220c9ff0
+21:50:15,265 INF packaging: Installed: procps-ng-3.3.15-1.el8.aarch64 1557588510 9ce1e465eaea7a0024ca3679052997575b62e97e63eb5055c874240e922b3918
+21:50:15,412 INF packaging: Installed: xz-5.2.4-3.el8.aarch64 1557536539 b9a899e715019e7002600005bcb2a9dd7b089eaef9c55c3764c326d745ad681f
+21:50:15,472 INF packaging: Installed: squashfs-tools-4.3-19.el8.aarch64 1573241516 75922657d45adf2cd13f22c8e371fd57ed38edfa21bc68f49c6708acf583b0ce
+21:50:15,516 INF packaging: Installed: gdbm-1:1.18-1.el8.aarch64 1557534276 b7d0b4b922429354ffe7ddac90c8cd448229571b8d8e4c342110edadfe809f99
+21:50:15,557 INF packaging: Installed: libsemanage-2.9-1.el8.aarch64 1573487540 87f4af95cf6a5a4d85c0fe309174743f746c49441b7a6ce148b3bd3f087cccfd
+21:50:15,602 INF packaging: Installed: shadow-utils-2:4.6-8.el8.aarch64 1573241054 4ec8423570d1cb923acc9e03a87c02065eb26e2aa67048240223fc72cdb861c5
+21:50:15,972 INF packaging: Configuring (running scriptlet for): libutempter-1.1.6-14.el8.aarch64 1557535324 8f6d9839a758fdacfdb4b4b0731e8023b8bbb0b633bd32dbf21c2ce85a933a8a
+21:50:16,060 INF packaging: Installed: libutempter-1.1.6-14.el8.aarch64 1557535324 8f6d9839a758fdacfdb4b4b0731e8023b8bbb0b633bd32dbf21c2ce85a933a8a
+21:50:16,085 INF packaging: Installed: libfdisk-2.32.1-17.el8.aarch64 1573243582 5f2d6f3627c8b711c009d3e45ff826d6fb5f9f133a70fddc2092516fdf8a03b1
+21:50:16,139 INF packaging: Configuring (running scriptlet for): libfdisk-2.32.1-17.el8.aarch64 1573243582 5f2d6f3627c8b711c009d3e45ff826d6fb5f9f133a70fddc2092516fdf8a03b1
+21:50:16,161 INF packaging: Installed: acl-2.2.53-1.el8.aarch64 1557533888 47c2cc5872174c548de1096dc5673ee91349209d89e0193a4793955d6865b3b1
+21:50:16,198 INF packaging: Installed: mpfr-3.1.6-1.el8.aarch64 1557535575 97a998a1b93c21bf070f9a9a1dbb525234b00fccedfe67de8967cd9ec7132eb1
+21:50:16,257 INF packaging: Configuring (running scriptlet for): mpfr-3.1.6-1.el8.aarch64 1557535575 97a998a1b93c21bf070f9a9a1dbb525234b00fccedfe67de8967cd9ec7132eb1
+21:50:16,278 INF packaging: Installed: nettle-3.4.1-1.el8.aarch64 1557535610 4d39ab38529ac4ef18c984de994a170822ba06cecd019d3847ee388f92c55ac8
+21:50:16,353 INF packaging: Configuring (running scriptlet for): nettle-3.4.1-1.el8.aarch64 1557535610 4d39ab38529ac4ef18c984de994a170822ba06cecd019d3847ee388f92c55ac8
+21:50:16,382 INF packaging: Installed: gnutls-3.6.8-8.el8.aarch64 1573513791 b8fcf0738511c87ff60071ca3e13b3cd884adf7efa11ba2586a08dad1aebcb1c
+21:50:16,582 INF packaging: Installed: glib2-2.56.4-7.el8.aarch64 1573232550 9aa167a7ad4523f0b04cc818f67d2eb113b97afc391a613d780c8a4032b0148b
+21:50:17,225 INF packaging: Installed: snappy-1.1.7-5.el8.aarch64 1557589532 62df1e376189aab65976262deb5f4fb1ede20d16ce55082918c716f35572667d
+21:50:17,240 INF packaging: Installed: libcomps-0.1.11-2.el8.aarch64 1573233392 87777c207d91cd1c3e3b1def76626a91c432c520ad3c107dea33f39331f9276d
+21:50:17,268 INF packaging: Installed: libmetalink-0.1.3-7.el8.aarch64 1557534971 b86423694dd6d12a0b608760046ef18f6ee97f96cb8ad661ace419a45525e200
+21:50:17,286 INF packaging: Installed: findutils-1:4.6.0-20.el8.aarch64 1557534393 985479064966d05aa82010ed5b8905942e47e2bebb919c9c1bd004a28addad1d
+21:50:17,386 INF packaging: Configuring (running scriptlet for): findutils-1:4.6.0-20.el8.aarch64 1557534393 985479064966d05aa82010ed5b8905942e47e2bebb919c9c1bd004a28addad1d
+21:50:17,403 INF packaging: Installed: libksba-1.3.5-7.el8.aarch64 1557534860 268145276c48fbb98f90edc9a4379eb30ddc8a9a14d93f5970a7c89281ac7e14
+21:50:17,448 INF packaging: Installed: cpio-2.12-8.el8.aarch64 1557534098 9a200f1cabd5869c7cd6483dc6e143e394bbd83fc6d653d279bc3ec25e1e35cc
+21:50:17,510 INF packaging: Installed: ethtool-2:5.0-2.el8.aarch64 1573231455 6f22032249e36b6cf05bb4346b2864e3e2c94aea0d872ed2eede0e8f0ebb908c
+21:50:17,551 INF packaging: Installed: ipcalc-0.2.4-3.el8.aarch64 1557582759 0ee3ef643d6baf7260f2759afc99bb076024b65083faa3b114434a00e0d2cbdb
+21:50:17,568 INF packaging: Installed: libmnl-1.0.4-6.el8.aarch64 1557584713 fbe4f2cb2660ebe3cb90a73c7dfbd978059af138356e46c9a93049761c0467ef
+21:50:17,589 INF packaging: Configuring (running scriptlet for): libmnl-1.0.4-6.el8.aarch64 1557584713 fbe4f2cb2660ebe3cb90a73c7dfbd978059af138356e46c9a93049761c0467ef
+21:50:17,613 INF packaging: Installed: iproute-4.18.0-15.el8.aarch64 1573232985 cfd58ae6c49fedfcd8c9fc8ce252d5b337f03e88db12aab6e342f7e9c752bd3f
+21:50:17,826 INF packaging: Installed: libnghttp2-1.33.0-1.el8_0.1.aarch64 1576601338 bcf5a99e8c71bf201e8420601632f6fd01b6092b27f52a3defc3a9cc42dfa56f
+21:50:17,853 INF packaging: Installed: libpcap-14:1.9.0-3.el8.aarch64 1576255398 1c945626c4f926e0bb991c26aef4da87aa9a34d9bb4e958ec6090457d4813156
+21:50:17,895 INF packaging: Installed: iptables-libs-1.8.2-16.el8.aarch64 1573233028 84f683206d976ee4ebdb8c68adf3a95cd699fb6d0842850e929e2b3335e6e665
+21:50:17,928 INF packaging: Installed: libseccomp-2.4.1-1.el8.aarch64 1573234460 9e370acca52660ec634507b4ab9cdd63931141ba79f850febb063adb902e71a8
+21:50:17,962 INF packaging: Configuring (running scriptlet for): libseccomp-2.4.1-1.el8.aarch64 1573234460 9e370acca52660ec634507b4ab9cdd63931141ba79f850febb063adb902e71a8
+21:50:17,985 INF packaging: Installed: libsigsegv-2.11-5.el8.aarch64 1557535163 b377f4e8bcdc750ed0be94f97bdbfbb12843c458fbc1d5d507f92ad04aaf592b
+21:50:18,003 INF packaging: Installed: gawk-4.2.1-1.el8.aarch64 1557534134 481c7df1492512f2a1d0afb42f041e4ac500cdf7d1f6e2f20c81222c7fc54e35
+21:50:18,280 INF packaging: Installed: libverto-0.3.0-5.el8.aarch64 1557535347 446f45706d78e80d4057d9d55dda32ce1cb823b2ca4dfe50f0ca5b515238130d
+21:50:18,299 INF packaging: Installed: krb5-libs-1.17-9.el8.aarch64 1573233667 4f3908f9681f4d485f30ebf700ba3ad6f3faa500d7ac913d6af11b6540a490c4
+21:50:18,536 INF packaging: Installed: libtirpc-1.1.4-4.el8.aarch64 1573234751 5f5d63e14ca77e84ae79d1d78569ad9326af6c107be137461800527afb5613eb
+21:50:18,573 INF packaging: Configuring (running scriptlet for): libtirpc-1.1.4-4.el8.aarch64 1573234751 5f5d63e14ca77e84ae79d1d78569ad9326af6c107be137461800527afb5613eb
+21:50:18,598 INF packaging: Installed: libnsl2-1.2.0-2.20180605git4a062cf.el8.aarch64 1557535010 b33276781f442757afd5e066ead95ec79927f2aed608a368420f230d5ee28686
+21:50:18,623 INF packaging: Configuring (running scriptlet for): libnsl2-1.2.0-2.20180605git4a062cf.el8.aarch64 1557535010 b33276781f442757afd5e066ead95ec79927f2aed608a368420f230d5ee28686
+21:50:18,648 INF packaging: Installed: platform-python-pip-9.0.3-15.el8.noarch 1573239287 3bb7989fd8bbd4c7abde093a492755040c2ef922fdb08adb8d914e182285cfff
+21:50:20,761 INF packaging: Installed: platform-python-setuptools-39.2.0-5.el8.noarch 1573572823 d300ce0fa3a0c6a91d50c5f6a8f5988c014b07b431267b857fcd057b8bf10301
+21:50:21,446 INF packaging: Installed: platform-python-3.6.8-15.1.el8.aarch64 1574366540 5e4012d263a0ed0962c3dd6c6273d18db5e212840283f2e3f946f59cbfbb1aff
+21:50:21,470 INF packaging: Configuring (running scriptlet for): platform-python-3.6.8-15.1.el8.aarch64 1574366540 5e4012d263a0ed0962c3dd6c6273d18db5e212840283f2e3f946f59cbfbb1aff
+21:50:21,501 INF packaging: Installed: python3-libs-3.6.8-15.1.el8.aarch64 1574366540 8f7f98c62904f3dd996be5fb39008a56e094a694d1decd87503f8fed767da72c
+21:50:28,414 INF packaging: Installed: libpwquality-1.4.0-9.el8.aarch64 1557535058 a90e9486e7956f07d1e48a60128c6fcdce7ba45deff90b403e8b77a8d6d77a12
+21:50:28,472 INF packaging: Installed: pam-1.3.1-4.el8.aarch64 1557535981 56211c910b8a4ea3fd9b6312adf5b5ce5a748a03f1f98a4ae5ed77502935ae43
+21:50:28,948 INF packaging: Configuring (running scriptlet for): pam-1.3.1-4.el8.aarch64 1557535981 56211c910b8a4ea3fd9b6312adf5b5ce5a748a03f1f98a4ae5ed77502935ae43
+21:50:28,974 INF packaging: Installed: util-linux-2.32.1-17.el8.aarch64 1573243582 7e9b8eca0f0460106af0be542609b52721f2169e3845216f97e6507b1f0ae96f
+21:50:30,188 INF packaging: Configuring (running scriptlet for): util-linux-2.32.1-17.el8.aarch64 1573243582 7e9b8eca0f0460106af0be542609b52721f2169e3845216f97e6507b1f0ae96f
+21:50:30,219 INF packaging: Installed: libcurl-minimal-7.61.1-11.el8.aarch64 1573231440 e0e97e432c98b2c447d55f7f622dbf4fd06b93bcbac0d5301a02132cc4b492e6
+21:50:30,273 INF packaging: Installed: curl-7.61.1-11.el8.aarch64 1573231440 787253e22ed01af9ca2ff38ed8c090c41a6a3991d74029ab7fb0b3539270535c
+21:50:30,335 INF packaging: Installed: rpm-4.14.2-25.el8.aarch64 1573240096 dca6ba2c2cfef0725198523e1f350595bd257bc247822ee60a1bb67afde9bd98
+21:50:30,708 INF packaging: Installed: rpm-libs-4.14.2-25.el8.aarch64 1573240096 0effd0de6224f4bbf487963fc4e5466a25d3c92e14d2c29062cd3cc4683ef34a
+21:50:30,783 INF packaging: Configuring (running scriptlet for): rpm-libs-4.14.2-25.el8.aarch64 1573240096 0effd0de6224f4bbf487963fc4e5466a25d3c92e14d2c29062cd3cc4683ef34a
+21:50:30,811 INF packaging: Installed: libsolv-0.7.4-3.el8.aarch64 1573234478 b842f1ea4a11d3775f20fdbe2d184a5e7e0a881fa7508de6cb65d86d1afd306c
+21:50:30,885 INF packaging: Installed: python3-libcomps-0.1.11-2.el8.aarch64 1573233392 8a8fc1b08c3eb295e863ced3b49e9c503e22bdc9fcaa6be8b958add274442067
+21:50:30,912 INF packaging: Installed: bind-export-libs-32:9.11.4-26.P2.el8.aarch64 1573498702 5ec09684ff0d5349940a316487a989fdf28ee4d1183ffc7a12f1e9f400828584
+21:50:31,155 INF packaging: Configuring (running scriptlet for): bind-export-libs-32:9.11.4-26.P2.el8.aarch64 1573498702 5ec09684ff0d5349940a316487a989fdf28ee4d1183ffc7a12f1e9f400828584
+21:50:31,239 INF packaging: Installed: cyrus-sasl-lib-2.1.27-1.el8.aarch64 1573230943 fbf3b3a288f9fd9787280a467199e9ffe188e1d1927ec7de04dc4c57eb6c28c8
+21:50:31,302 INF packaging: Configuring (running scriptlet for): cyrus-sasl-lib-2.1.27-1.el8.aarch64 1573230943 fbf3b3a288f9fd9787280a467199e9ffe188e1d1927ec7de04dc4c57eb6c28c8
+21:50:31,325 INF packaging: Installed: openldap-2.4.46-10.el8.aarch64 1573236632 6166fd0648aa00efa667638d3990dd25898cf2e238fd03e881206077916bab24
+21:50:31,427 INF packaging: Installed: libyaml-0.1.7-5.el8.aarch64 1557586308 30327c94b9729602f0b4dd73ff67edc2b7269af782182a2c02f44246ffe7f10f
+21:50:31,450 INF packaging: Installed: libmodulemd1-1.8.11-4.el8_1.aarch64 1576093164 0879ea74919dd39e22980004d715cf0c81088bf85e1108154e74286d11ce0d6d
+21:50:31,504 INF packaging: Installed: npth-1.5-4.el8.aarch64 1557535644 eaaeb7ee9274c38650feab7a7abae0b6b38637cded9cf6c828651326b791dc68
+21:50:31,521 INF packaging: Installed: gnupg2-2.2.9-1.el8.aarch64 1557534580 cdaad1e2c2321bd400740c140f595c03baee66a4d3af42a97808202c2a047614
+21:50:32,136 INF packaging: Installed: gpgme-1.10.0-6.el8.0.1.aarch64 1557965317 8113abba5e1552707c4bb808b9fbbd42e8837046e7a815fea170eaa032ade3e7
+21:50:32,194 INF packaging: Installed: librepo-1.10.3-3.el8.aarch64 1573234097 04c498d2659373d1ea4b96f5fe467c8f68867484030462537275e2643d423dce
+21:50:32,222 INF packaging: Installed: libdnf-0.35.1-9.el8_1.aarch64 1576094372 066f9f0de17b6a32a3d54adc76fc54a247405f39562769dc5fc73115ee9ce62e
+21:50:32,362 INF packaging: Installed: python3-libdnf-0.35.1-9.el8_1.aarch64 1576094372 9b4b379d377df15867b21aaa6fc03dfdfaa99392f69994498497f4636a02e562
+21:50:32,614 INF packaging: Installed: python3-hawkey-0.35.1-9.el8_1.aarch64 1576094372 a2df038876c0266408fa3d3b1a804944111fe7af92a2ef7e048d2c386896a0c6
+21:50:32,660 INF packaging: Installed: python3-gpg-1.10.0-6.el8.0.1.aarch64 1557965317 cd7c23cccf987fc8a7d3a3508508377e030eef22513de56062b2eaf49e855819
+21:50:32,897 INF packaging: Installed: libreport-filesystem-2.9.5-9.el8.aarch64 1574181762 eb87d54346b64000861c1a103405d4e8975f363b6263fbf0f3cc433f344157c8
+21:50:32,910 INF packaging: Installed: dnf-data-4.2.7-7.el8_1.noarch 1576770263 896ae1e03e45a1aec04367da33a59a91027c57d63c2379ef66f10848bf09fe91
+21:50:32,939 INF packaging: Installed: dhcp-common-12:4.3.6-34.el8.noarch 1574177723 ba2a96d422a773e05e9bacff9f59995ed933f180fcad0cb031e5198fec753101
+21:50:32,966 INF packaging: Installed: dbus-common-1:1.12.8-9.el8.noarch 1573230909 cf8c41f6d9795ebb1176025816ac22ea5b40de5d3a1084e2fcff53a6bd2fc766
+21:50:32,986 INF packaging: Configuring (running scriptlet for): dbus-daemon-1:1.12.8-9.el8.aarch64 1573230909 e21d76d770c60c72f234fa65eebe91760258190a16bb126be35cd3d30d52f62e
+21:50:33,077 INF packaging: Installed: dbus-daemon-1:1.12.8-9.el8.aarch64 1573230909 e21d76d770c60c72f234fa65eebe91760258190a16bb126be35cd3d30d52f62e
+21:50:33,158 INF packaging: Configuring (running scriptlet for): dbus-daemon-1:1.12.8-9.el8.aarch64 1573230909 e21d76d770c60c72f234fa65eebe91760258190a16bb126be35cd3d30d52f62e
+21:50:33,178 INF packaging: Installed: device-mapper-8:1.02.163-5.el8.0.1.aarch64 1578076773 2a9c0a618b522131b85d224d9f7e52fed57b8adaffa791e840576b4f6a547be3
+21:50:33,237 INF packaging: Installed: device-mapper-libs-8:1.02.163-5.el8.0.1.aarch64 1578076773 4608cfe7ac6396147ab60965f363f41f440e204122139c2ad58c2d1f1bc81c5e
+21:50:33,285 INF packaging: Installed: cryptsetup-libs-2.2.0-2.el8.aarch64 1573230634 f68e6554f00961309a789cfdbf93a459414253180e6310ae02bd42f991713110
+21:50:33,388 INF packaging: Configuring (running scriptlet for): cryptsetup-libs-2.2.0-2.el8.aarch64 1573230634 f68e6554f00961309a789cfdbf93a459414253180e6310ae02bd42f991713110
+21:50:33,414 INF packaging: Installed: elfutils-default-yama-scope-0.176-5.el8.noarch 1574179287 0413fcea9c722f7283109667db9225e352c71245e393438aa9b24f4b45ff385b
+21:50:33,421 INF packaging: Configuring (running scriptlet for): elfutils-default-yama-scope-0.176-5.el8.noarch 1574179287 0413fcea9c722f7283109667db9225e352c71245e393438aa9b24f4b45ff385b
+21:50:33,437 INF packaging: Installed: elfutils-libs-0.176-5.el8.aarch64 1574179287 03d5aa989e1e4da882216ee63abe0ba6ddd770f1bffead9ec7b252c17416a5bb
+21:50:33,605 INF packaging: Installed: systemd-pam-239-18.el8_1.1.aarch64 1578075311 7ddb617e2aaa90f8d5a1bb2764e792858755429809fc01c64a3e4d9f9e620c7b
+21:50:33,652 INF packaging: Configuring (running scriptlet for): systemd-239-18.el8_1.1.aarch64 1578075311 9e3b512cceefc98dead2b81d7b80804b3cf3cdc4c9b2d357d289c1a373917aa9
+21:50:33,948 INF packaging: Installed: systemd-239-18.el8_1.1.aarch64 1578075311 9e3b512cceefc98dead2b81d7b80804b3cf3cdc4c9b2d357d289c1a373917aa9
+21:50:35,593 INF packaging: Configuring (running scriptlet for): systemd-239-18.el8_1.1.aarch64 1578075311 9e3b512cceefc98dead2b81d7b80804b3cf3cdc4c9b2d357d289c1a373917aa9
+21:50:35,769 INF packaging: Installed: dbus-1:1.12.8-9.el8.aarch64 1573230909 8fe6a663694c249e0318c16bf46eb1b8e5b79f1e1c9f91d6864a4af1ae64f060
+21:50:35,774 INF packaging: Installed: iputils-20180629-2.el8.aarch64 1573233043 4948d75c8b9a2abd4cb29fd516308e319ffdadabbd4aab623123ab35b9bc1b77
+21:50:35,837 INF packaging: Configuring (running scriptlet for): iputils-20180629-2.el8.aarch64 1573233043 4948d75c8b9a2abd4cb29fd516308e319ffdadabbd4aab623123ab35b9bc1b77
+21:50:35,872 INF packaging: Installed: dhcp-client-12:4.3.6-34.el8.aarch64 1574177723 e8e0e7dd3dfa5f42ed49873f7f076f59aa2d9465ea38004a612c9dc98e443fa2
+21:50:35,935 INF packaging: Installed: libkcapi-1.1.1-16_1.el8.aarch64 1557585303 1320860e686f2c065412f51b96538ec373ac521a90d83450cecb12ac7d1c8166
+21:50:35,966 INF packaging: Installed: libkcapi-hmaccalc-1.1.1-16_1.el8.aarch64 1557585303 afe4286cd6ffb6412f6790c0c8c6c14f9b1b207642f81926c178f9dea4f457ff
+21:50:35,997 INF packaging: Installed: systemd-udev-239-18.el8_1.1.aarch64 1578075311 01fba66c119497098edd29804620a7eff4d851774af10f3dbc2da5843c46ae74
+21:50:36,674 INF packaging: Configuring (running scriptlet for): systemd-udev-239-18.el8_1.1.aarch64 1578075311 01fba66c119497098edd29804620a7eff4d851774af10f3dbc2da5843c46ae74
+21:50:37,412 INF packaging: Installed: dracut-049-27.git20190906.el8_1.1.aarch64 1578075187 997e71d94206966a0926af1cc4b81ac2c5bd1a0b32f8950d8978deac1a48e215
+21:50:38,019 INF packaging: Installed: dracut-network-049-27.git20190906.el8_1.1.aarch64 1578075187 8f882b4dab0f8aaf1a4464ffbbf3bbcebc4735c8bfa2ef3a931e3f9061d42700
+21:50:38,184 INF packaging: Installed: dracut-squash-049-27.git20190906.el8_1.1.aarch64 1578075187 79d1111ccf1a224e361dd1bd81946792a60192f3e3050cff0307d2a2cea157c0
+21:50:38,204 INF packaging: Installed: rpm-build-libs-4.14.2-25.el8.aarch64 1573240096 e8a0fd5945bbefb9101e541d14f0954da786d0f91b8f61907e15b2a12a768014
+21:50:38,244 INF packaging: Configuring (running scriptlet for): rpm-build-libs-4.14.2-25.el8.aarch64 1573240096 e8a0fd5945bbefb9101e541d14f0954da786d0f91b8f61907e15b2a12a768014
+21:50:38,467 INF packaging: Installed: python3-rpm-4.14.2-25.el8.aarch64 1573240096 71a4a1847e162ea824cd97f4cb999f3c6b2fddcc71dda3f629a22237bdf8d01c
+21:50:38,548 INF packaging: Installed: python3-dnf-4.2.7-7.el8_1.noarch 1576770263 6a2bcc5e243e330a0eac7ac21c16df3e8aeb6c0a19c635568e734dee31f1493e
+21:50:39,120 INF packaging: Installed: dnf-4.2.7-7.el8_1.noarch 1576770263 36bfe110fb40a28b833d69f38a082a0f8f38c0c9fbf12b6c981521edf92a15fc
+21:50:39,215 INF packaging: Configuring (running scriptlet for): dnf-4.2.7-7.el8_1.noarch 1576770263 36bfe110fb40a28b833d69f38a082a0f8f38c0c9fbf12b6c981521edf92a15fc
+21:50:39,251 INF packaging: Installed: yum-4.2.7-7.el8_1.noarch 1576770263 8fbe43b831d44d00a1230c28a318d7d6afd594a43863d0dffd1c156c1493f27e
+21:50:39,272 INF packaging: Installed: kexec-tools-2.0.19-12.el8_1.1.aarch64 1578075342 83b2f65073ec812d05075c114db64128719d15fd87df22e807cdc3d6b5b800dd
+21:50:39,464 INF packaging: Configuring (running scriptlet for): kexec-tools-2.0.19-12.el8_1.1.aarch64 1578075342 83b2f65073ec812d05075c114db64128719d15fd87df22e807cdc3d6b5b800dd
+21:50:39,508 INF packaging: Installed: binutils-2.30-58.el8.0.1.aarch64 1578671868 e89a9c00d79ecbb3b225cd55cb6c7bd9f113d19c4a242f66fb7e2fba7500a969
+21:50:40,873 INF packaging: Configuring (running scriptlet for): binutils-2.30-58.el8.0.1.aarch64 1578671868 e89a9c00d79ecbb3b225cd55cb6c7bd9f113d19c4a242f66fb7e2fba7500a969
+21:50:40,925 INF packaging: Installed: tar-2:1.30-4.el8.aarch64 1557536685 51ee9e5981361b491a22f63223798ebfa2287af8bb6206b4f8538e945b37fcf2
+21:50:41,068 INF packaging: Configuring (running scriptlet for): tar-2:1.30-4.el8.aarch64 1557536685 51ee9e5981361b491a22f63223798ebfa2287af8bb6206b4f8538e945b37fcf2
+21:50:41,084 INF packaging: Installed: vim-minimal-2:8.0.1763-13.el8.aarch64 1573499615 064c38a01fb786acf8ff0f8657d74077d2d6091908c20a4c41156d161893e6a4
+21:50:41,197 INF packaging: Installed: hostname-3.20-6.el8.aarch64 1557582534 656b3b23230b9c17461b5cde860d46bb84074a406f71840697fca8dffcdf280c
+21:50:41,222 INF packaging: Configuring (running scriptlet for): hostname-3.20-6.el8.aarch64 1557582534 656b3b23230b9c17461b5cde860d46bb84074a406f71840697fca8dffcdf280c
+21:50:41,256 INF packaging: Installed: less-530-1.el8.aarch64 1557583955 2057a073ae0bb0149a8093447fad2577f900577605576b3ca22b2af76e970c5f
+21:50:41,310 INF packaging: Installed: langpacks-en-1.0-12.el8.noarch 1557795722 c99db07c2548246f6b2ec98c1d2b536e40b2f4dbba39f3430044868a27985732
+21:50:41,317 INF packaging: Installed: rootfiles-8.1-22.el8.noarch 1557588938 d967d6bbb33bf7a295a64807f81875c84e82a8ecc59b6c72fe955141b1660d39
+21:50:41,322 INF packaging: Post installation setup phase started.
+21:50:41,347 INF packaging: Configuring (running scriptlet for): filesystem-3.8-2.el8.aarch64 1557534032 ab20ad82d06371112c442d6bef7dc1b7af1bd4d51ee880868c2a079034e57934
+21:50:41,368 INF packaging: Configuring (running scriptlet for): rootfiles-8.1-22.el8.noarch 1557588938 d967d6bbb33bf7a295a64807f81875c84e82a8ecc59b6c72fe955141b1660d39
+21:50:41,424 INF packaging: Configuring (running scriptlet for): glibc-common-2.28-72.el8.aarch64 1573010757 d90a2e23630cc72b13816de2fc8c3eacf0e3a8196d1886e51affee456f8ee6f1
+21:50:41,466 INF packaging: Configuring (running scriptlet for): info-6.5-4.el8.aarch64 1557536354 49a7e7eb36e9c3dfed9f8290e6e1ddc7ed5ccc6721888ce9bd90d9705dde118a
+21:50:41,577 INF packaging: Configuring (running scriptlet for): glib2-2.56.4-7.el8.aarch64 1573232550 9aa167a7ad4523f0b04cc818f67d2eb113b97afc391a613d780c8a4032b0148b
+21:50:41,681 INF packaging: Configuring (running scriptlet for): systemd-239-18.el8_1.1.aarch64 1578075311 9e3b512cceefc98dead2b81d7b80804b3cf3cdc4c9b2d357d289c1a373917aa9
+21:50:41,714 INF packaging: Configuring (running scriptlet for): systemd-239-18.el8_1.1.aarch64 1578075311 9e3b512cceefc98dead2b81d7b80804b3cf3cdc4c9b2d357d289c1a373917aa9
+21:50:41,745 INF packaging: Configuring (running scriptlet for): systemd-239-18.el8_1.1.aarch64 1578075311 9e3b512cceefc98dead2b81d7b80804b3cf3cdc4c9b2d357d289c1a373917aa9
+21:50:41,774 INF packaging: Configuring (running scriptlet for): systemd-239-18.el8_1.1.aarch64 1578075311 9e3b512cceefc98dead2b81d7b80804b3cf3cdc4c9b2d357d289c1a373917aa9
+21:50:41,803 INF packaging: Configuring (running scriptlet for): systemd-239-18.el8_1.1.aarch64 1578075311 9e3b512cceefc98dead2b81d7b80804b3cf3cdc4c9b2d357d289c1a373917aa9
+21:50:41,850 INF packaging: Configuring (running scriptlet for): systemd-udev-239-18.el8_1.1.aarch64 1578075311 01fba66c119497098edd29804620a7eff4d851774af10f3dbc2da5843c46ae74
+21:50:42,577 INF packaging: Configuring (running scriptlet for): systemd-udev-239-18.el8_1.1.aarch64 1578075311 01fba66c119497098edd29804620a7eff4d851774af10f3dbc2da5843c46ae74
+21:50:42,670 Level 8 dnf: RPM transaction over.
+21:50:42,903 INF packaging: Verifying: acl-2.2.53-1.el8.aarch64 1557533888 47c2cc5872174c548de1096dc5673ee91349209d89e0193a4793955d6865b3b1
+21:50:42,915 INF packaging: Verifying: audit-libs-3.0-0.10.20180831git0047a6c.el8.aarch64 1557533998 59a12bf8bec4313297320c5c13da007e1f0376b0d0ab9e8ef7747370e672f627
+21:50:43,088 Level 8 dnf: timer: verify transaction: 379 ms
+21:50:43,091 Level 8 dnf: timer: transaction: 45429 ms
+21:50:43,091 INF packaging: Verifying: basesystem-11-5.el8.noarch 1557533944 48226934763e4c412c1eb65df314e6879720b4b1ebcb3d07c126c9526639cb68
+21:50:43,101 INF packaging: Verifying: bash-4.4.19-10.el8.aarch64 1573230502 b4db0c7eb9ac568e423eede22018935de0281f7a96099aa5b32fb56ae5968c40
+21:50:43,101 Level 8 dnf: Cleaning up.
+21:50:43,102 INF packaging: Verifying: bind-export-libs-32:9.11.4-26.P2.el8.aarch64 1573498702 5ec09684ff0d5349940a316487a989fdf28ee4d1183ffc7a12f1e9f400828584
+21:50:43,104 INF packaging: Verifying: binutils-2.30-58.el8.0.1.aarch64 1578671868 e89a9c00d79ecbb3b225cd55cb6c7bd9f113d19c4a242f66fb7e2fba7500a969
+21:50:43,107 INF packaging: Verifying: bzip2-libs-1.0.6-26.el8.aarch64 1557534038 a4451cae0e8a3307228ed8ac7dc9bab7de77fcbf2004141daa7f986f5dc9b381
+21:50:43,108 INF packaging: Verifying: ca-certificates-2019.2.32-80.0.el8_1.noarch 1576091956 f223fa4f5790aa54be68459c68848db6fe8dfc7f6ddde4acd4dca2434813af67
+21:50:43,110 INF packaging: Verifying: centos-gpg-keys-8.1-1.1911.0.8.el8.noarch 1577978521 e32102ff6751b1fa27b81baed961c43125840a1bc84a9d01f8b539ba4a3b30bc
+21:50:43,112 INF packaging: Verifying: centos-release-8.1-1.1911.0.8.el8.aarch64 1577978521 1e3dbe18935b3a3b316cd19989cdd820c6cedea7403a8f39b2fd1fb112c29194
+21:50:43,114 INF packaging: Verifying: centos-repos-8.1-1.1911.0.8.el8.aarch64 1577978521 89f8f6d41d58b54bb17ca83704c408cb8d7788302199f9f2ee7ab6f01f4d8ac2
+21:50:43,116 INF packaging: Verifying: chkconfig-1.11-1.el8.aarch64 1557533941 172da3cd3ea13036c2a6cbe953b5d5b2b41c9a3aa7a2d6fdb5efd4c1d51174f3
+21:50:43,118 INF packaging: Verifying: coreutils-single-8.30-6.el8.aarch64 1557591004 1d320b375be9ef02717f1546c3d5058262317c5a7cc12b1b5e2173149a93b962
+21:50:43,118 Level 8 dnf: /tmp/dnf.package.cache/tar-1.30-4.el8.aarch64.rpm removed
+21:50:43,118 Level 8 dnf: /tmp/dnf.package.cache/libmetalink-0.1.3-7.el8.aarch64.rpm removed
+21:50:43,119 Level 8 dnf: /tmp/dnf.package.cache/libxml2-2.9.7-5.el8.aarch64.rpm removed
+21:50:43,119 Level 8 dnf: /tmp/dnf.package.cache/libpwquality-1.4.0-9.el8.aarch64.rpm removed
+21:50:43,120 Level 8 dnf: /tmp/dnf.package.cache/iptables-libs-1.8.2-16.el8.aarch64.rpm removed
+21:50:43,120 INF packaging: Verifying: cpio-2.12-8.el8.aarch64 1557534098 9a200f1cabd5869c7cd6483dc6e143e394bbd83fc6d653d279bc3ec25e1e35cc
+21:50:43,121 Level 8 dnf: /tmp/dnf.package.cache/procps-ng-3.3.15-1.el8.aarch64.rpm removed
+21:50:43,121 Level 8 dnf: /tmp/dnf.package.cache/curl-7.61.1-11.el8.aarch64.rpm removed
+21:50:43,122 Level 8 dnf: /tmp/dnf.package.cache/libutempter-1.1.6-14.el8.aarch64.rpm removed
+21:50:43,122 INF packaging: Verifying: cracklib-2.9.6-15.el8.aarch64 1557533931 54efb853142572e1c2872e351838fc3657b662722ff6b2913d1872d4752a0eb8
+21:50:43,122 Level 8 dnf: /tmp/dnf.package.cache/libreport-filesystem-2.9.5-9.el8.aarch64.rpm removed
+21:50:43,123 Level 8 dnf: /tmp/dnf.package.cache/dbus-tools-1.12.8-9.el8.aarch64.rpm removed
+21:50:43,123 Level 8 dnf: /tmp/dnf.package.cache/python3-rpm-4.14.2-25.el8.aarch64.rpm removed
+21:50:43,124 Level 8 dnf: /tmp/dnf.package.cache/dnf-4.2.7-7.el8_1.noarch.rpm removed
+21:50:43,124 INF packaging: Verifying: crypto-policies-20190807-1.git9b1477b.el8.noarch 1576516381 2d63eb375a83b7c50847e370edc668f404c1412a46b6f618ab598863996042cd
+21:50:43,124 Level 8 dnf: /tmp/dnf.package.cache/libksba-1.3.5-7.el8.aarch64.rpm removed
+21:50:43,125 Level 8 dnf: /tmp/dnf.package.cache/gnupg2-2.2.9-1.el8.aarch64.rpm removed
+21:50:43,125 Level 8 dnf: /tmp/dnf.package.cache/device-mapper-1.02.163-5.el8.0.1.aarch64.rpm removed
+21:50:43,126 Level 8 dnf: /tmp/dnf.package.cache/libgcc-8.3.1-4.5.el8.aarch64.rpm removed
+21:50:43,126 INF packaging: Verifying: cryptsetup-libs-2.2.0-2.el8.aarch64 1573230634 f68e6554f00961309a789cfdbf93a459414253180e6310ae02bd42f991713110
+21:50:43,126 Level 8 dnf: /tmp/dnf.package.cache/librepo-1.10.3-3.el8.aarch64.rpm removed
+21:50:43,127 Level 8 dnf: /tmp/dnf.package.cache/nettle-3.4.1-1.el8.aarch64.rpm removed
+21:50:43,127 INF packaging: Verifying: curl-7.61.1-11.el8.aarch64 1573231440 787253e22ed01af9ca2ff38ed8c090c41a6a3991d74029ab7fb0b3539270535c
+21:50:43,128 Level 8 dnf: /tmp/dnf.package.cache/lua-libs-5.3.4-11.el8.aarch64.rpm removed
+21:50:43,129 INF packaging: Verifying: cyrus-sasl-lib-2.1.27-1.el8.aarch64 1573230943 fbf3b3a288f9fd9787280a467199e9ffe188e1d1927ec7de04dc4c57eb6c28c8
+21:50:43,129 Level 8 dnf: /tmp/dnf.package.cache/libselinux-2.9-2.1.el8.aarch64.rpm removed
+21:50:43,130 Level 8 dnf: /tmp/dnf.package.cache/popt-1.16-14.el8.aarch64.rpm removed
+21:50:43,130 Level 8 dnf: /tmp/dnf.package.cache/lz4-libs-1.8.1.2-4.el8.aarch64.rpm removed
+21:50:43,131 INF packaging: Verifying: dbus-1:1.12.8-9.el8.aarch64 1573230909 8fe6a663694c249e0318c16bf46eb1b8e5b79f1e1c9f91d6864a4af1ae64f060
+21:50:43,131 Level 8 dnf: /tmp/dnf.package.cache/openssl-libs-1.1.1c-2.el8.aarch64.rpm removed
+21:50:43,132 Level 8 dnf: /tmp/dnf.package.cache/systemd-libs-239-18.el8_1.1.aarch64.rpm removed
+21:50:43,133 INF packaging: Verifying: dbus-common-1:1.12.8-9.el8.noarch 1573230909 cf8c41f6d9795ebb1176025816ac22ea5b40de5d3a1084e2fcff53a6bd2fc766
+21:50:43,133 Level 8 dnf: /tmp/dnf.package.cache/cyrus-sasl-lib-2.1.27-1.el8.aarch64.rpm removed
+21:50:43,134 Level 8 dnf: /tmp/dnf.package.cache/libcap-2.26-1.el8.aarch64.rpm removed
+21:50:43,135 Level 8 dnf: /tmp/dnf.package.cache/pcre-8.42-4.el8.aarch64.rpm removed
+21:50:43,135 INF packaging: Verifying: dbus-daemon-1:1.12.8-9.el8.aarch64 1573230909 e21d76d770c60c72f234fa65eebe91760258190a16bb126be35cd3d30d52f62e
+21:50:43,136 Level 8 dnf: /tmp/dnf.package.cache/iproute-4.18.0-15.el8.aarch64.rpm removed
+21:50:43,137 INF packaging: Verifying: dbus-libs-1:1.12.8-9.el8.aarch64 1573230909 26e91abcf8582e3f928ee825c45a63049669ff2ef68e9707af1d2f5d1b8f118e
+21:50:43,137 Level 8 dnf: /tmp/dnf.package.cache/platform-python-3.6.8-15.1.el8.aarch64.rpm removed
+21:50:43,139 INF packaging: Verifying: dbus-tools-1:1.12.8-9.el8.aarch64 1573230909 ff972a44b0442d483877703a550c6742b8c49e1a01e271f0ad4a899a3362a90c
+21:50:43,139 Level 8 dnf: /tmp/dnf.package.cache/libkcapi-hmaccalc-1.1.1-16_1.el8.aarch64.rpm removed
+21:50:43,140 Level 8 dnf: /tmp/dnf.package.cache/dhcp-libs-4.3.6-34.el8.aarch64.rpm removed
+21:50:43,140 Level 8 dnf: /tmp/dnf.package.cache/libcap-ng-0.7.9-4.el8.aarch64.rpm removed
+21:50:43,141 Level 8 dnf: /tmp/dnf.package.cache/dracut-squash-049-27.git20190906.el8_1.1.aarch64.rpm removed
+21:50:43,141 INF packaging: Verifying: device-mapper-8:1.02.163-5.el8.0.1.aarch64 1578076773 2a9c0a618b522131b85d224d9f7e52fed57b8adaffa791e840576b4f6a547be3
+21:50:43,142 Level 8 dnf: /tmp/dnf.package.cache/json-c-0.13.1-0.2.el8.aarch64.rpm removed
+21:50:43,143 INF packaging: Verifying: device-mapper-libs-8:1.02.163-5.el8.0.1.aarch64 1578076773 4608cfe7ac6396147ab60965f363f41f440e204122139c2ad58c2d1f1bc81c5e
+21:50:43,143 Level 8 dnf: /tmp/dnf.package.cache/basesystem-11-5.el8.noarch.rpm removed
+21:50:43,144 INF packaging: Verifying: dhcp-client-12:4.3.6-34.el8.aarch64 1574177723 e8e0e7dd3dfa5f42ed49873f7f076f59aa2d9465ea38004a612c9dc98e443fa2
+21:50:43,144 Level 8 dnf: /tmp/dnf.package.cache/sed-4.5-1.el8.aarch64.rpm removed
+21:50:43,145 Level 8 dnf: /tmp/dnf.package.cache/libkcapi-1.1.1-16_1.el8.aarch64.rpm removed
+21:50:43,146 INF packaging: Verifying: dhcp-common-12:4.3.6-34.el8.noarch 1574177723 ba2a96d422a773e05e9bacff9f59995ed933f180fcad0cb031e5198fec753101
+21:50:43,146 Level 8 dnf: /tmp/dnf.package.cache/gzip-1.9-9.el8.aarch64.rpm removed
+21:50:43,147 Level 8 dnf: /tmp/dnf.package.cache/libusbx-1.0.22-1.el8.aarch64.rpm removed
+21:50:43,148 Level 8 dnf: /tmp/dnf.package.cache/pcre2-10.32-1.el8.aarch64.rpm removed
+21:50:43,148 INF packaging: Verifying: dhcp-libs-12:4.3.6-34.el8.aarch64 1574177723 1c66b5647558403d0d68364bf76f1f00a640fa86562f9f1ff6674f273230235c
+21:50:43,149 Level 8 dnf: /tmp/dnf.package.cache/python3-hawkey-0.35.1-9.el8_1.aarch64.rpm removed
+21:50:43,150 Level 8 dnf: /tmp/dnf.package.cache/kmod-libs-25-13.el8.aarch64.rpm removed
+21:50:43,151 INF packaging: Verifying: dnf-4.2.7-7.el8_1.noarch 1576770263 36bfe110fb40a28b833d69f38a082a0f8f38c0c9fbf12b6c981521edf92a15fc
+21:50:43,151 Level 8 dnf: /tmp/dnf.package.cache/expat-2.2.5-3.el8.aarch64.rpm removed
+21:50:43,152 Level 8 dnf: /tmp/dnf.package.cache/pam-1.3.1-4.el8.aarch64.rpm removed
+21:50:43,153 Level 8 dnf: /tmp/dnf.package.cache/hostname-3.20-6.el8.aarch64.rpm removed
+21:50:43,153 INF packaging: Verifying: dnf-data-4.2.7-7.el8_1.noarch 1576770263 896ae1e03e45a1aec04367da33a59a91027c57d63c2379ef66f10848bf09fe91
+21:50:43,153 Level 8 dnf: /tmp/dnf.package.cache/device-mapper-libs-1.02.163-5.el8.0.1.aarch64.rpm removed
+21:50:43,154 Level 8 dnf: /tmp/dnf.package.cache/libunistring-0.9.9-3.el8.aarch64.rpm removed
+21:50:43,155 Level 8 dnf: /tmp/dnf.package.cache/libmnl-1.0.4-6.el8.aarch64.rpm removed
+21:50:43,155 INF packaging: Verifying: dracut-049-27.git20190906.el8_1.1.aarch64 1578075187 997e71d94206966a0926af1cc4b81ac2c5bd1a0b32f8950d8978deac1a48e215
+21:50:43,155 Level 8 dnf: /tmp/dnf.package.cache/python3-libcomps-0.1.11-2.el8.aarch64.rpm removed
+21:50:43,156 Level 8 dnf: /tmp/dnf.package.cache/ca-certificates-2019.2.32-80.0.el8_1.noarch.rpm removed
+21:50:43,156 INF packaging: Verifying: dracut-network-049-27.git20190906.el8_1.1.aarch64 1578075187 8f882b4dab0f8aaf1a4464ffbbf3bbcebc4735c8bfa2ef3a931e3f9061d42700
+21:50:43,156 Level 8 dnf: /tmp/dnf.package.cache/keyutils-libs-1.5.10-6.el8.aarch64.rpm removed
+21:50:43,157 Level 8 dnf: /tmp/dnf.package.cache/libmodulemd1-1.8.11-4.el8_1.aarch64.rpm removed
+21:50:43,158 Level 8 dnf: /tmp/dnf.package.cache/systemd-pam-239-18.el8_1.1.aarch64.rpm removed
+21:50:43,158 INF packaging: Verifying: dracut-squash-049-27.git20190906.el8_1.1.aarch64 1578075187 79d1111ccf1a224e361dd1bd81946792a60192f3e3050cff0307d2a2cea157c0
+21:50:43,158 Level 8 dnf: /tmp/dnf.package.cache/util-linux-2.32.1-17.el8.aarch64.rpm removed
+21:50:43,159 Level 8 dnf: /tmp/dnf.package.cache/libassuan-2.5.1-3.el8.aarch64.rpm removed
+21:50:43,159 INF packaging: Verifying: elfutils-default-yama-scope-0.176-5.el8.noarch 1574179287 0413fcea9c722f7283109667db9225e352c71245e393438aa9b24f4b45ff385b
+21:50:43,159 Level 8 dnf: /tmp/dnf.package.cache/bash-4.4.19-10.el8.aarch64.rpm removed
+21:50:43,160 Level 8 dnf: /tmp/dnf.package.cache/xz-5.2.4-3.el8.aarch64.rpm removed
+21:50:43,160 Level 8 dnf: /tmp/dnf.package.cache/langpacks-en-1.0-12.el8.noarch.rpm removed
+21:50:43,160 INF packaging: Verifying: elfutils-libelf-0.176-5.el8.aarch64 1574179287 1bdd18be6f185964f70b98dccc9ae9202e2461ac045143d118829143cfdd5e53
+21:50:43,161 Level 8 dnf: /tmp/dnf.package.cache/libsigsegv-2.11-5.el8.aarch64.rpm removed
+21:50:43,161 Level 8 dnf: /tmp/dnf.package.cache/vim-minimal-8.0.1763-13.el8.aarch64.rpm removed
+21:50:43,162 INF packaging: Verifying: elfutils-libs-0.176-5.el8.aarch64 1574179287 03d5aa989e1e4da882216ee63abe0ba6ddd770f1bffead9ec7b252c17416a5bb
+21:50:43,162 Level 8 dnf: /tmp/dnf.package.cache/gnutls-3.6.8-8.el8.aarch64.rpm removed
+21:50:43,162 Level 8 dnf: /tmp/dnf.package.cache/glibc-2.28-72.el8.aarch64.rpm removed
+21:50:43,163 INF packaging: Verifying: ethtool-2:5.0-2.el8.aarch64 1573231455 6f22032249e36b6cf05bb4346b2864e3e2c94aea0d872ed2eede0e8f0ebb908c
+21:50:43,163 Level 8 dnf: /tmp/dnf.package.cache/bind-export-libs-9.11.4-26.P2.el8.aarch64.rpm removed
+21:50:43,163 Level 8 dnf: /tmp/dnf.package.cache/p11-kit-0.23.14-5.el8_0.aarch64.rpm removed
+21:50:43,164 Level 8 dnf: /tmp/dnf.package.cache/platform-python-setuptools-39.2.0-5.el8.noarch.rpm removed
+21:50:43,164 INF packaging: Verifying: expat-2.2.5-3.el8.aarch64 1557534216 6b081b6a5b780eefe8fc5f8f6c4291b7558ddd6107de8a8bd9610799be9662e4
+21:50:43,164 Level 8 dnf: /tmp/dnf.package.cache/cryptsetup-libs-2.2.0-2.el8.aarch64.rpm removed
+21:50:43,165 Level 8 dnf: /tmp/dnf.package.cache/libxcrypt-4.1.1-4.el8.aarch64.rpm removed
+21:50:43,166 Level 8 dnf: /tmp/dnf.package.cache/libarchive-3.3.2-7.el8.aarch64.rpm removed
+21:50:43,166 INF packaging: Verifying: file-libs-5.33-8.el8.aarch64 1557534266 b76126f36f78f85da4f7b3614e7f69b4ee5067e6319468d1eec609fb85858c31
+21:50:43,166 Level 8 dnf: /tmp/dnf.package.cache/less-530-1.el8.aarch64.rpm removed
+21:50:43,167 Level 8 dnf: /tmp/dnf.package.cache/libacl-2.2.53-1.el8.aarch64.rpm removed
+21:50:43,168 Level 8 dnf: /tmp/dnf.package.cache/libdnf-0.35.1-9.el8_1.aarch64.rpm removed
+21:50:43,168 Level 8 dnf: /tmp/dnf.package.cache/chkconfig-1.11-1.el8.aarch64.rpm removed
+21:50:43,169 INF packaging: Verifying: filesystem-3.8-2.el8.aarch64 1557534032 ab20ad82d06371112c442d6bef7dc1b7af1bd4d51ee880868c2a079034e57934
+21:50:43,169 Level 8 dnf: /tmp/dnf.package.cache/cpio-2.12-8.el8.aarch64.rpm removed
+21:50:43,170 Level 8 dnf: /tmp/dnf.package.cache/elfutils-libelf-0.176-5.el8.aarch64.rpm removed
+21:50:43,171 Level 8 dnf: /tmp/dnf.package.cache/crypto-policies-20190807-1.git9b1477b.el8.noarch.rpm removed
+21:50:43,173 Level 8 dnf: /tmp/dnf.package.cache/libsepol-2.9-1.el8.aarch64.rpm removed
+21:50:43,174 INF packaging: Verifying: findutils-1:4.6.0-20.el8.aarch64 1557534393 985479064966d05aa82010ed5b8905942e47e2bebb919c9c1bd004a28addad1d
+21:50:43,175 Level 8 dnf: /tmp/dnf.package.cache/xz-libs-5.2.4-3.el8.aarch64.rpm removed
+21:50:43,175 INF packaging: Verifying: gawk-4.2.1-1.el8.aarch64 1557534134 481c7df1492512f2a1d0afb42f041e4ac500cdf7d1f6e2f20c81222c7fc54e35
+21:50:43,176 Level 8 dnf: /tmp/dnf.package.cache/p11-kit-trust-0.23.14-5.el8_0.aarch64.rpm removed
+21:50:43,177 INF packaging: Verifying: gdbm-1:1.18-1.el8.aarch64 1557534276 b7d0b4b922429354ffe7ddac90c8cd448229571b8d8e4c342110edadfe809f99
+21:50:43,177 Level 8 dnf: /tmp/dnf.package.cache/acl-2.2.53-1.el8.aarch64.rpm removed
+21:50:43,178 Level 8 dnf: /tmp/dnf.package.cache/tzdata-2019c-1.el8.noarch.rpm removed
+21:50:43,179 INF packaging: Verifying: gdbm-libs-1:1.18-1.el8.aarch64 1557534276 a7d04ae40ad91ba0ea93e4971a35585638f6adf8dbe1ed4849f643b6b64a5871
+21:50:43,179 Level 8 dnf: /tmp/dnf.package.cache/ima-evm-utils-1.1-5.el8.aarch64.rpm removed
+21:50:43,181 Level 8 dnf: /tmp/dnf.package.cache/libnghttp2-1.33.0-1.el8_0.1.aarch64.rpm removed
+21:50:43,181 INF packaging: Verifying: glib2-2.56.4-7.el8.aarch64 1573232550 9aa167a7ad4523f0b04cc818f67d2eb113b97afc391a613d780c8a4032b0148b
+21:50:43,182 Level 8 dnf: /tmp/dnf.package.cache/ipcalc-0.2.4-3.el8.aarch64.rpm removed
+21:50:43,182 INF packaging: Verifying: glibc-2.28-72.el8.aarch64 1573010757 09f4b5dddfa85bdd8c00059cde77ae767dc1771e857959641f138699922c02b1
+21:50:43,183 Level 8 dnf: /tmp/dnf.package.cache/dbus-1.12.8-9.el8.aarch64.rpm removed
+21:50:43,183 Level 8 dnf: /tmp/dnf.package.cache/kmod-25-13.el8.aarch64.rpm removed
+21:50:43,184 INF packaging: Verifying: glibc-common-2.28-72.el8.aarch64 1573010757 d90a2e23630cc72b13816de2fc8c3eacf0e3a8196d1886e51affee456f8ee6f1
+21:50:43,185 Level 8 dnf: /tmp/dnf.package.cache/libgcrypt-1.8.3-4.el8.aarch64.rpm removed
+21:50:43,185 Level 8 dnf: /tmp/dnf.package.cache/file-libs-5.33-8.el8.aarch64.rpm removed
+21:50:43,186 INF packaging: Verifying: glibc-minimal-langpack-2.28-72.el8.aarch64 1573010757 22ee7b416d8a56ddd312f1bb1ad51358de2ab09511a08338b2f39b5b1e5d40e1
+21:50:43,186 Level 8 dnf: /tmp/dnf.package.cache/libgpg-error-1.31-1.el8.aarch64.rpm removed
+21:50:43,187 Level 8 dnf: /tmp/dnf.package.cache/libidn2-2.2.0-1.el8.aarch64.rpm removed
+21:50:43,188 INF packaging: Verifying: gmp-1:6.1.2-10.el8.aarch64 1573232447 8d407f8ad961169fca2ee5e22e824cbc2d2b5fedca9701896cc492d4cb788603
+21:50:43,188 Level 8 dnf: /tmp/dnf.package.cache/libmount-2.32.1-17.el8.aarch64.rpm removed
+21:50:43,189 Level 8 dnf: /tmp/dnf.package.cache/shadow-utils-4.6-8.el8.aarch64.rpm removed
+21:50:43,190 INF packaging: Verifying: gnupg2-2.2.9-1.el8.aarch64 1557534580 cdaad1e2c2321bd400740c140f595c03baee66a4d3af42a97808202c2a047614
+21:50:43,190 Level 8 dnf: /tmp/dnf.package.cache/ncurses-base-6.1-7.20180224.el8.noarch.rpm removed
+21:50:43,191 INF packaging: Verifying: gnutls-3.6.8-8.el8.aarch64 1573513791 b8fcf0738511c87ff60071ca3e13b3cd884adf7efa11ba2586a08dad1aebcb1c
+21:50:43,191 Level 8 dnf: /tmp/dnf.package.cache/libffi-3.1-21.el8.aarch64.rpm removed
+21:50:43,192 Level 8 dnf: /tmp/dnf.package.cache/iputils-20180629-2.el8.aarch64.rpm removed
+21:50:43,193 INF packaging: Verifying: gpgme-1.10.0-6.el8.0.1.aarch64 1557965317 8113abba5e1552707c4bb808b9fbbd42e8837046e7a815fea170eaa032ade3e7
+21:50:43,193 Level 8 dnf: /tmp/dnf.package.cache/mpfr-3.1.6-1.el8.aarch64.rpm removed
+21:50:43,195 INF packaging: Verifying: grep-3.1-6.el8.aarch64 1557534549 7ffd6e95b0554466e97346b2f41fb5279aedcb29ae07828f63d06a8dedd7cd51
+21:50:43,195 Level 8 dnf: /tmp/dnf.package.cache/coreutils-single-8.30-6.el8.aarch64.rpm removed
+21:50:43,196 Level 8 dnf: /tmp/dnf.package.cache/libattr-2.4.48-3.el8.aarch64.rpm removed
+21:50:43,197 Level 8 dnf: /tmp/dnf.package.cache/libdb-5.3.28-37.el8.aarch64.rpm removed
+21:50:43,198 INF packaging: Verifying: gzip-1.9-9.el8.aarch64 1573232646 88ecbc25e066f0dbd0cde2142c5e1fa27a68b349b66f0ee638086c03c96d1dc6
+21:50:43,198 Level 8 dnf: /tmp/dnf.package.cache/dhcp-client-4.3.6-34.el8.aarch64.rpm removed
+21:50:43,200 INF packaging: Verifying: hostname-3.20-6.el8.aarch64 1557582534 656b3b23230b9c17461b5cde860d46bb84074a406f71840697fca8dffcdf280c
+21:50:43,200 Level 8 dnf: /tmp/dnf.package.cache/libsmartcols-2.32.1-17.el8.aarch64.rpm removed
+21:50:43,201 Level 8 dnf: /tmp/dnf.package.cache/libsolv-0.7.4-3.el8.aarch64.rpm removed
+21:50:43,201 INF packaging: Verifying: ima-evm-utils-1.1-5.el8.aarch64 1573232742 b58f45e55741bb835ec566af2afc36cd97d8fc354b3aad96a85980cadefa968c
+21:50:43,202 Level 8 dnf: /tmp/dnf.package.cache/openldap-2.4.46-10.el8.aarch64.rpm removed
+21:50:43,203 Level 8 dnf: /tmp/dnf.package.cache/glibc-minimal-langpack-2.28-72.el8.aarch64.rpm removed
+21:50:43,203 INF packaging: Verifying: info-6.5-4.el8.aarch64 1557536354 49a7e7eb36e9c3dfed9f8290e6e1ddc7ed5ccc6721888ce9bd90d9705dde118a
+21:50:43,204 Level 8 dnf: /tmp/dnf.package.cache/elfutils-libs-0.176-5.el8.aarch64.rpm removed
+21:50:43,205 Level 8 dnf: /tmp/dnf.package.cache/libfdisk-2.32.1-17.el8.aarch64.rpm removed
+21:50:43,205 INF packaging: Verifying: ipcalc-0.2.4-3.el8.aarch64 1557582759 0ee3ef643d6baf7260f2759afc99bb076024b65083faa3b114434a00e0d2cbdb
+21:50:43,205 Level 8 dnf: /tmp/dnf.package.cache/filesystem-3.8-2.el8.aarch64.rpm removed
+21:50:43,206 Level 8 dnf: /tmp/dnf.package.cache/glib2-2.56.4-7.el8.aarch64.rpm removed
+21:50:43,206 Level 8 dnf: /tmp/dnf.package.cache/ethtool-5.0-2.el8.aarch64.rpm removed
+21:50:43,207 INF packaging: Verifying: iproute-4.18.0-15.el8.aarch64 1573232985 cfd58ae6c49fedfcd8c9fc8ce252d5b337f03e88db12aab6e342f7e9c752bd3f
+21:50:43,207 Level 8 dnf: /tmp/dnf.package.cache/python3-libs-3.6.8-15.1.el8.aarch64.rpm removed
+21:50:43,208 Level 8 dnf: /tmp/dnf.package.cache/python3-libdnf-0.35.1-9.el8_1.aarch64.rpm removed
+21:50:43,208 Level 8 dnf: /tmp/dnf.package.cache/libcom_err-1.44.6-3.el8.aarch64.rpm removed
+21:50:43,209 INF packaging: Verifying: iptables-libs-1.8.2-16.el8.aarch64 1573233028 84f683206d976ee4ebdb8c68adf3a95cd699fb6d0842850e929e2b3335e6e665
+21:50:43,209 Level 8 dnf: /tmp/dnf.package.cache/platform-python-pip-9.0.3-15.el8.noarch.rpm removed
+21:50:43,210 Level 8 dnf: /tmp/dnf.package.cache/dracut-network-049-27.git20190906.el8_1.1.aarch64.rpm removed
+21:50:43,211 INF packaging: Verifying: iputils-20180629-2.el8.aarch64 1573233043 4948d75c8b9a2abd4cb29fd516308e319ffdadabbd4aab623123ab35b9bc1b77
+21:50:43,211 Level 8 dnf: /tmp/dnf.package.cache/info-6.5-4.el8.aarch64.rpm removed
+21:50:43,213 INF packaging: Verifying: json-c-0.13.1-0.2.el8.aarch64 1557583395 e5f07ebcc0dabd9cc5a460c3fd5db8bbb96276a48132ea52ce2b1ddb7ead6320
+21:50:43,213 Level 8 dnf: /tmp/dnf.package.cache/python3-dnf-4.2.7-7.el8_1.noarch.rpm removed
+21:50:43,214 Level 8 dnf: /tmp/dnf.package.cache/readline-7.0-10.el8.aarch64.rpm removed
+21:50:43,215 Level 8 dnf: /tmp/dnf.package.cache/libcomps-0.1.11-2.el8.aarch64.rpm removed
+21:50:43,215 INF packaging: Verifying: kexec-tools-2.0.19-12.el8_1.1.aarch64 1578075342 83b2f65073ec812d05075c114db64128719d15fd87df22e807cdc3d6b5b800dd
+21:50:43,216 Level 8 dnf: /tmp/dnf.package.cache/dhcp-common-4.3.6-34.el8.noarch.rpm removed
+21:50:43,216 INF packaging: Verifying: keyutils-libs-1.5.10-6.el8.aarch64 1557534531 54e61e873e45000433bec3387112f7ead3c4cb9731045caa8033ff5b14ee46b1
+21:50:43,217 Level 8 dnf: /tmp/dnf.package.cache/libtirpc-1.1.4-4.el8.aarch64.rpm removed
+21:50:43,218 Level 8 dnf: /tmp/dnf.package.cache/libblkid-2.32.1-17.el8.aarch64.rpm removed
+21:50:43,218 Level 8 dnf: /tmp/dnf.package.cache/grep-3.1-6.el8.aarch64.rpm removed
+21:50:43,219 INF packaging: Verifying: kmod-25-13.el8.aarch64 1573233257 fcba58b071206a5d0b8ea64b4d74fad7166346a9998c7a7596bd6f18812a70c2
+21:50:43,219 Level 8 dnf: /tmp/dnf.package.cache/gdbm-1.18-1.el8.aarch64.rpm removed
+21:50:43,220 Level 8 dnf: /tmp/dnf.package.cache/findutils-4.6.0-20.el8.aarch64.rpm removed
+21:50:43,220 INF packaging: Verifying: kmod-libs-25-13.el8.aarch64 1573233257 ae5e172502f5351ed843028ef740eba561772027a64c9a8a4d350d228fde5215
+21:50:43,221 Level 8 dnf: /tmp/dnf.package.cache/libyaml-0.1.7-5.el8.aarch64.rpm removed
+21:50:43,222 Level 8 dnf: /tmp/dnf.package.cache/libdb-utils-5.3.28-37.el8.aarch64.rpm removed
+21:50:43,223 INF packaging: Verifying: krb5-libs-1.17-9.el8.aarch64 1573233667 4f3908f9681f4d485f30ebf700ba3ad6f3faa500d7ac913d6af11b6540a490c4
+21:50:43,224 Level 8 dnf: /tmp/dnf.package.cache/zlib-1.2.11-10.el8.aarch64.rpm removed
+21:50:43,224 INF packaging: Verifying: less-530-1.el8.aarch64 1557583955 2057a073ae0bb0149a8093447fad2577f900577605576b3ca22b2af76e970c5f
+21:50:43,224 Level 8 dnf: /tmp/dnf.package.cache/dbus-daemon-1.12.8-9.el8.aarch64.rpm removed
+21:50:43,225 Level 8 dnf: /tmp/dnf.package.cache/rpm-4.14.2-25.el8.aarch64.rpm removed
+21:50:43,225 Level 8 dnf: /tmp/dnf.package.cache/krb5-libs-1.17-9.el8.aarch64.rpm removed
+21:50:43,226 Level 8 dnf: /tmp/dnf.package.cache/binutils-2.30-58.el8.0.1.aarch64.rpm removed
+21:50:43,226 INF packaging: Verifying: libacl-2.2.53-1.el8.aarch64 1557533888 c4cfed85e5a0db903ad134b4327b1714e5453fcf5c4348ec93ab344860a970ef
+21:50:43,227 Level 8 dnf: /tmp/dnf.package.cache/setup-2.12.2-2.el8_1.1.noarch.rpm removed
+21:50:43,227 Level 8 dnf: /tmp/dnf.package.cache/gdbm-libs-1.18-1.el8.aarch64.rpm removed
+21:50:43,228 Level 8 dnf: /tmp/dnf.package.cache/gmp-6.1.2-10.el8.aarch64.rpm removed
+21:50:43,228 INF packaging: Verifying: libarchive-3.3.2-7.el8.aarch64 1573233541 85101969d4db13026e07b6f585a1f7bc987311058b611ad5a19ac3932ba8e14a
+21:50:43,228 Level 8 dnf: /tmp/dnf.package.cache/audit-libs-3.0-0.10.20180831git0047a6c.el8.aarch64.rpm removed
+21:50:43,229 Level 8 dnf: /tmp/dnf.package.cache/libseccomp-2.4.1-1.el8.aarch64.rpm removed
+21:50:43,229 Level 8 dnf: /tmp/dnf.package.cache/rootfiles-8.1-22.el8.noarch.rpm removed
+21:50:43,230 Level 8 dnf: /tmp/dnf.package.cache/cracklib-2.9.6-15.el8.aarch64.rpm removed
+21:50:43,230 INF packaging: Verifying: libassuan-2.5.1-3.el8.aarch64 1557534744 cf4d477f18ecd97470d1bc50c0e442de6f7d5db74829221d0f9b1ddfc9a71dab
+21:50:43,230 Level 8 dnf: /tmp/dnf.package.cache/rpm-build-libs-4.14.2-25.el8.aarch64.rpm removed
+21:50:43,231 Level 8 dnf: /tmp/dnf.package.cache/libpcap-1.9.0-3.el8.aarch64.rpm removed
+21:50:43,231 Level 8 dnf: /tmp/dnf.package.cache/systemd-udev-239-18.el8_1.1.aarch64.rpm removed
+21:50:43,232 Level 8 dnf: /tmp/dnf.package.cache/centos-gpg-keys-8.1-1.1911.0.8.el8.noarch.rpm removed
+21:50:43,232 INF packaging: Verifying: libattr-2.4.48-3.el8.aarch64 1557533888 6a6db7eab6e53dccc54116d2ddf86b02db4cff332a58b868f7ba778a99666c58
+21:50:43,232 Level 8 dnf: /tmp/dnf.package.cache/yum-4.2.7-7.el8_1.noarch.rpm removed
+21:50:43,233 Level 8 dnf: /tmp/dnf.package.cache/rpm-libs-4.14.2-25.el8.aarch64.rpm removed
+21:50:43,233 Level 8 dnf: /tmp/dnf.package.cache/sqlite-libs-3.26.0-3.el8.aarch64.rpm removed
+21:50:43,234 Level 8 dnf: /tmp/dnf.package.cache/libuuid-2.32.1-17.el8.aarch64.rpm removed
+21:50:43,234 INF packaging: Verifying: libblkid-2.32.1-17.el8.aarch64 1573243582 8d01474037b685e8a64ebe54126eee8fcf6384c26aa924328cae995a749ed10e
+21:50:43,234 Level 8 dnf: /tmp/dnf.package.cache/bzip2-libs-1.0.6-26.el8.aarch64.rpm removed
+21:50:43,235 Level 8 dnf: /tmp/dnf.package.cache/snappy-1.1.7-5.el8.aarch64.rpm removed
+21:50:43,235 Level 8 dnf: /tmp/dnf.package.cache/centos-repos-8.1-1.1911.0.8.el8.aarch64.rpm removed
+21:50:43,236 INF packaging: Verifying: libcap-2.26-1.el8.aarch64 1573233363 06ffc7a438bab22cdad9f191a05045ee634c78d69162369822efcbf2b4c94127
+21:50:43,236 Level 8 dnf: /tmp/dnf.package.cache/libtasn1-4.13-3.el8.aarch64.rpm removed
+21:50:43,236 Level 8 dnf: /tmp/dnf.package.cache/systemd-239-18.el8_1.1.aarch64.rpm removed
+21:50:43,237 Level 8 dnf: /tmp/dnf.package.cache/dracut-049-27.git20190906.el8_1.1.aarch64.rpm removed
+21:50:43,238 Level 8 dnf: /tmp/dnf.package.cache/squashfs-tools-4.3-19.el8.aarch64.rpm removed
+21:50:43,238 INF packaging: Verifying: libcap-ng-0.7.9-4.el8.aarch64 1557534755 1a97d9d8d347c084cf4b7ac4c8ac6e4914eae7a18062644aff5ad944583207c5
+21:50:43,238 Level 8 dnf: /tmp/dnf.package.cache/lzo-2.08-14.el8.aarch64.rpm removed
+21:50:43,239 Level 8 dnf: /tmp/dnf.package.cache/dbus-common-1.12.8-9.el8.noarch.rpm removed
+21:50:43,239 Level 8 dnf: /tmp/dnf.package.cache/npth-1.5-4.el8.aarch64.rpm removed
+21:50:43,240 Level 8 dnf: /tmp/dnf.package.cache/gawk-4.2.1-1.el8.aarch64.rpm removed
+21:50:43,240 INF packaging: Verifying: libcom_err-1.44.6-3.el8.aarch64 1573233254 6fa43da699a765578a3e9445bb4f8e81cfa0488241660722d01d2735ce740cf6
+21:50:43,240 Level 8 dnf: /tmp/dnf.package.cache/dbus-libs-1.12.8-9.el8.aarch64.rpm removed
+21:50:43,241 Level 8 dnf: /tmp/dnf.package.cache/glibc-common-2.28-72.el8.aarch64.rpm removed
+21:50:43,241 Level 8 dnf: /tmp/dnf.package.cache/python3-gpg-1.10.0-6.el8.0.1.aarch64.rpm removed
+21:50:43,241 INF packaging: Verifying: libcomps-0.1.11-2.el8.aarch64 1573233392 87777c207d91cd1c3e3b1def76626a91c432c520ad3c107dea33f39331f9276d
+21:50:43,242 Level 8 dnf: /tmp/dnf.package.cache/kexec-tools-2.0.19-12.el8_1.1.aarch64.rpm removed
+21:50:43,242 Level 8 dnf: /tmp/dnf.package.cache/libsemanage-2.9-1.el8.aarch64.rpm removed
+21:50:43,243 Level 8 dnf: /tmp/dnf.package.cache/python3-pip-wheel-9.0.3-15.el8.noarch.rpm removed
+21:50:43,243 Level 8 dnf: /tmp/dnf.package.cache/libnsl2-1.2.0-2.20180605git4a062cf.el8.aarch64.rpm removed
+21:50:43,243 INF packaging: Verifying: libcurl-minimal-7.61.1-11.el8.aarch64 1573231440 e0e97e432c98b2c447d55f7f622dbf4fd06b93bcbac0d5301a02132cc4b492e6
+21:50:43,244 Level 8 dnf: /tmp/dnf.package.cache/centos-release-8.1-1.1911.0.8.el8.aarch64.rpm removed
+21:50:43,244 Level 8 dnf: /tmp/dnf.package.cache/elfutils-default-yama-scope-0.176-5.el8.noarch.rpm removed
+21:50:43,245 Level 8 dnf: /tmp/dnf.package.cache/ncurses-libs-6.1-7.20180224.el8.aarch64.rpm removed
+21:50:43,245 INF packaging: Verifying: libdb-5.3.28-37.el8.aarch64 1573233918 ad06d1753bb443403e544c02837579cb0b7836d380ca59c88cd0e89894870615
+21:50:43,245 Level 8 dnf: /tmp/dnf.package.cache/libstdc++-8.3.1-4.5.el8.aarch64.rpm removed
+21:50:43,246 Level 8 dnf: /tmp/dnf.package.cache/libverto-0.3.0-5.el8.aarch64.rpm removed
+21:50:43,246 Level 8 dnf: /tmp/dnf.package.cache/libcurl-minimal-7.61.1-11.el8.aarch64.rpm removed
+21:50:43,247 Level 8 dnf: /tmp/dnf.package.cache/python3-setuptools-wheel-39.2.0-5.el8.noarch.rpm removed
+21:50:43,247 INF packaging: Verifying: libdb-utils-5.3.28-37.el8.aarch64 1573233918 9c174435e558ebc58198efd824803a01275831c69e8969fc567a34b6f9d07f6d
+21:50:43,247 Level 8 dnf: /tmp/dnf.package.cache/dnf-data-4.2.7-7.el8_1.noarch.rpm removed
+21:50:43,248 Level 8 dnf: /tmp/dnf.package.cache/gpgme-1.10.0-6.el8.0.1.aarch64.rpm removed
+21:50:43,249 INF packaging: Verifying: libdnf-0.35.1-9.el8_1.aarch64 1576094372 066f9f0de17b6a32a3d54adc76fc54a247405f39562769dc5fc73115ee9ce62e
+21:50:43,251 INF packaging: Verifying: libfdisk-2.32.1-17.el8.aarch64 1573243582 5f2d6f3627c8b711c009d3e45ff826d6fb5f9f133a70fddc2092516fdf8a03b1
+21:50:43,253 INF packaging: Verifying: libffi-3.1-21.el8.aarch64 1573233544 bc2fc704cf93c3d23b5dd08190504888c5c5de9e36ad5503bca83918c9a0f0eb
+21:50:43,255 INF packaging: Verifying: libgcc-8.3.1-4.5.el8.aarch64 1573020941 44b6c368421a973bc5abc4707af78835f35a642af23a1f72d0a73f448dc4ec1a
+21:50:43,257 INF packaging: Verifying: libgcrypt-1.8.3-4.el8.aarch64 1573233696 349fb3fe51236f9c0608cc94c035853292fed724bcc4a37f7f7edd3523e1099d
+21:50:43,259 INF packaging: Verifying: libgpg-error-1.31-1.el8.aarch64 1557534857 b953729a0a2be24749aeee9f00853fdc3227737971cf052a999a37ac36387cd9
+21:50:43,261 INF packaging: Verifying: libidn2-2.2.0-1.el8.aarch64 1573233666 b62589101a60a365ef34447cae78f62e6dba560d403dc56c87036709ea00ad88
+21:50:43,263 INF packaging: Verifying: libkcapi-1.1.1-16_1.el8.aarch64 1557585303 1320860e686f2c065412f51b96538ec373ac521a90d83450cecb12ac7d1c8166
+21:50:43,265 INF packaging: Verifying: libkcapi-hmaccalc-1.1.1-16_1.el8.aarch64 1557585303 afe4286cd6ffb6412f6790c0c8c6c14f9b1b207642f81926c178f9dea4f457ff
+21:50:43,267 INF packaging: Verifying: libksba-1.3.5-7.el8.aarch64 1557534860 268145276c48fbb98f90edc9a4379eb30ddc8a9a14d93f5970a7c89281ac7e14
+21:50:43,269 INF packaging: Verifying: libmetalink-0.1.3-7.el8.aarch64 1557534971 b86423694dd6d12a0b608760046ef18f6ee97f96cb8ad661ace419a45525e200
+21:50:43,271 INF packaging: Verifying: libmnl-1.0.4-6.el8.aarch64 1557584713 fbe4f2cb2660ebe3cb90a73c7dfbd978059af138356e46c9a93049761c0467ef
+21:50:43,273 INF packaging: Verifying: libmodulemd1-1.8.11-4.el8_1.aarch64 1576093164 0879ea74919dd39e22980004d715cf0c81088bf85e1108154e74286d11ce0d6d
+21:50:43,275 INF packaging: Verifying: libmount-2.32.1-17.el8.aarch64 1573243582 51f25e1c76760e9706a191557827f19e93fe2a4ba69d822ec710125b480f5e5b
+21:50:43,277 INF packaging: Verifying: libnghttp2-1.33.0-1.el8_0.1.aarch64 1576601338 bcf5a99e8c71bf201e8420601632f6fd01b6092b27f52a3defc3a9cc42dfa56f
+21:50:43,279 INF packaging: Verifying: libnsl2-1.2.0-2.20180605git4a062cf.el8.aarch64 1557535010 b33276781f442757afd5e066ead95ec79927f2aed608a368420f230d5ee28686
+21:50:43,281 INF packaging: Verifying: libpcap-14:1.9.0-3.el8.aarch64 1576255398 1c945626c4f926e0bb991c26aef4da87aa9a34d9bb4e958ec6090457d4813156
+21:50:43,283 INF packaging: Verifying: libpwquality-1.4.0-9.el8.aarch64 1557535058 a90e9486e7956f07d1e48a60128c6fcdce7ba45deff90b403e8b77a8d6d77a12
+21:50:43,285 INF packaging: Verifying: librepo-1.10.3-3.el8.aarch64 1573234097 04c498d2659373d1ea4b96f5fe467c8f68867484030462537275e2643d423dce
+21:50:43,287 INF packaging: Verifying: libreport-filesystem-2.9.5-9.el8.aarch64 1574181762 eb87d54346b64000861c1a103405d4e8975f363b6263fbf0f3cc433f344157c8
+21:50:43,289 INF packaging: Verifying: libseccomp-2.4.1-1.el8.aarch64 1573234460 9e370acca52660ec634507b4ab9cdd63931141ba79f850febb063adb902e71a8
+21:50:43,291 INF packaging: Verifying: libselinux-2.9-2.1.el8.aarch64 1573486606 a10c3bbe22bccd0e90b651cabb33d952b7d7f9023d65d2a5b5e85f04178a8060
+21:50:43,294 INF packaging: Verifying: libsemanage-2.9-1.el8.aarch64 1573487540 87f4af95cf6a5a4d85c0fe309174743f746c49441b7a6ce148b3bd3f087cccfd
+21:50:43,295 INF packaging: Verifying: libsepol-2.9-1.el8.aarch64 1573234404 236c00d37f3127a7d399a11ff45f019554b8f7bfaefd12965705f9ca0d4f3908
+21:50:43,297 INF packaging: Verifying: libsigsegv-2.11-5.el8.aarch64 1557535163 b377f4e8bcdc750ed0be94f97bdbfbb12843c458fbc1d5d507f92ad04aaf592b
+21:50:43,299 INF packaging: Verifying: libsmartcols-2.32.1-17.el8.aarch64 1573243582 6bb601fd3931e40a36c57150fcb3eb7747e8b8febb8a933f7047cded5c249f95
+21:50:43,302 INF packaging: Verifying: libsolv-0.7.4-3.el8.aarch64 1573234478 b842f1ea4a11d3775f20fdbe2d184a5e7e0a881fa7508de6cb65d86d1afd306c
+21:50:43,303 INF packaging: Verifying: libstdc++-8.3.1-4.5.el8.aarch64 1573020941 8164adb9d244bea61d74ec7cd0ea5ecb5045e7132540ff08aad6df8a07e96168
+21:50:43,306 INF packaging: Verifying: libtasn1-4.13-3.el8.aarch64 1557535255 3401ccfb7fd08c12578b6257b4dac7e94ba5f4cd70fc6a234fd90bb99d1bb108
+21:50:43,307 INF packaging: Verifying: libtirpc-1.1.4-4.el8.aarch64 1573234751 5f5d63e14ca77e84ae79d1d78569ad9326af6c107be137461800527afb5613eb
+21:50:43,310 INF packaging: Verifying: libunistring-0.9.9-3.el8.aarch64 1557535383 707429ccb3223628d55097a162cd0d3de1bd00b48800677c1099931b0f019e80
+21:50:43,311 INF packaging: Verifying: libusbx-1.0.22-1.el8.aarch64 1557535350 24145e86f4b02fac2175f3d8e9f38749618a8b770b45ae2a5a92311c220c9ff0
+21:50:43,314 INF packaging: Verifying: libutempter-1.1.6-14.el8.aarch64 1557535324 8f6d9839a758fdacfdb4b4b0731e8023b8bbb0b633bd32dbf21c2ce85a933a8a
+21:50:43,315 INF packaging: Verifying: libuuid-2.32.1-17.el8.aarch64 1573243582 f96200d76a55bff931f994c48dfa77c933c6a3eb4ec018cccc706c7c62b26f8a
+21:50:43,318 INF packaging: Verifying: libverto-0.3.0-5.el8.aarch64 1557535347 446f45706d78e80d4057d9d55dda32ce1cb823b2ca4dfe50f0ca5b515238130d
+21:50:43,320 INF packaging: Verifying: libxcrypt-4.1.1-4.el8.aarch64 1557535351 2221fb6f38fb36025c3283afe04e009bb1cc688144e71c5a9edc6717f22012c0
+21:50:43,322 INF packaging: Verifying: libxml2-2.9.7-5.el8.aarch64 1557535440 61705d4ff0dfacad59f9a1a34b3f224a692d8cba28b6a2a5d8cf47b99e5d8957
+21:50:43,324 INF packaging: Verifying: libyaml-0.1.7-5.el8.aarch64 1557586308 30327c94b9729602f0b4dd73ff67edc2b7269af782182a2c02f44246ffe7f10f
+21:50:43,326 INF packaging: Verifying: lua-libs-5.3.4-11.el8.aarch64 1573235119 914f1d8cf5385ec874ac88b00f5ae99e77be48aa6c7157a2e0c1c5355c415c94
+21:50:43,328 INF packaging: Verifying: lz4-libs-1.8.1.2-4.el8.aarch64 1557535455 b646ce7481e0c17b0b5ae21d606e96496a56bf782e94247968061e746d97b4ce
+21:50:43,330 INF packaging: Verifying: lzo-2.08-14.el8.aarch64 1557586698 6809839757bd05082ca1b8d23eac617898eda3ce34844a0d31b0a030c8cc6653
+21:50:43,332 INF packaging: Verifying: mpfr-3.1.6-1.el8.aarch64 1557535575 97a998a1b93c21bf070f9a9a1dbb525234b00fccedfe67de8967cd9ec7132eb1
+21:50:43,334 INF packaging: Verifying: ncurses-base-6.1-7.20180224.el8.noarch 1557535702 1dfed63c2b675064c87d3e95c433a1c4515b24c28a7815e643e6f3d84814e79d
+21:50:43,336 INF packaging: Verifying: ncurses-libs-6.1-7.20180224.el8.aarch64 1557535702 4d62bee2b38b7ae79937139f3e246ddefd184da953a70263d633f770d30b60c3
+21:50:43,338 INF packaging: Verifying: nettle-3.4.1-1.el8.aarch64 1557535610 4d39ab38529ac4ef18c984de994a170822ba06cecd019d3847ee388f92c55ac8
+21:50:43,340 INF packaging: Verifying: npth-1.5-4.el8.aarch64 1557535644 eaaeb7ee9274c38650feab7a7abae0b6b38637cded9cf6c828651326b791dc68
+21:50:43,342 INF packaging: Verifying: openldap-2.4.46-10.el8.aarch64 1573236632 6166fd0648aa00efa667638d3990dd25898cf2e238fd03e881206077916bab24
+21:50:43,344 INF packaging: Verifying: openssl-libs-1:1.1.1c-2.el8.aarch64 1573237545 ca3895e61cd5ab7f833eae7a231d7fb4d4c88c24ddb570d88e73c2625f42bd0d
+21:50:43,346 INF packaging: Verifying: p11-kit-0.23.14-5.el8_0.aarch64 1561995890 fdf69d6c98f6a9bae8a280b16a043841bb086470c3366e0ec75eb46c2ade7013
+21:50:43,348 INF packaging: Verifying: p11-kit-trust-0.23.14-5.el8_0.aarch64 1561995890 a629464b907faa92e7d294120a95b492078e2f05122e51810c4f4912ff8f95de
+21:50:43,350 INF packaging: Verifying: pam-1.3.1-4.el8.aarch64 1557535981 56211c910b8a4ea3fd9b6312adf5b5ce5a748a03f1f98a4ae5ed77502935ae43
+21:50:43,352 INF packaging: Verifying: pcre-8.42-4.el8.aarch64 1557587721 a8053346f758919a8e6f177d767d6372352b2b37e1c86195ab87a891ce55e692
+21:50:43,354 INF packaging: Verifying: pcre2-10.32-1.el8.aarch64 1557535789 4bc79516dafe99ec1157d1733d6f5873f1add668f022051794d89f92de5616ee
+21:50:43,356 INF packaging: Verifying: platform-python-3.6.8-15.1.el8.aarch64 1574366540 5e4012d263a0ed0962c3dd6c6273d18db5e212840283f2e3f946f59cbfbb1aff
+21:50:43,358 INF packaging: Verifying: platform-python-pip-9.0.3-15.el8.noarch 1573239287 3bb7989fd8bbd4c7abde093a492755040c2ef922fdb08adb8d914e182285cfff
+21:50:43,360 INF packaging: Verifying: platform-python-setuptools-39.2.0-5.el8.noarch 1573572823 d300ce0fa3a0c6a91d50c5f6a8f5988c014b07b431267b857fcd057b8bf10301
+21:50:43,362 INF packaging: Verifying: popt-1.16-14.el8.aarch64 1557535927 f58ce80c4f54569359e6f051b84d11cdce1bbe0f79ad51228ca89ecc614f937d
+21:50:43,364 INF packaging: Verifying: procps-ng-3.3.15-1.el8.aarch64 1557588510 9ce1e465eaea7a0024ca3679052997575b62e97e63eb5055c874240e922b3918
+21:50:43,366 INF packaging: Verifying: python3-dnf-4.2.7-7.el8_1.noarch 1576770263 6a2bcc5e243e330a0eac7ac21c16df3e8aeb6c0a19c635568e734dee31f1493e
+21:50:43,367 INF packaging: Verifying: python3-gpg-1.10.0-6.el8.0.1.aarch64 1557965317 cd7c23cccf987fc8a7d3a3508508377e030eef22513de56062b2eaf49e855819
+21:50:43,369 INF packaging: Verifying: python3-hawkey-0.35.1-9.el8_1.aarch64 1576094372 a2df038876c0266408fa3d3b1a804944111fe7af92a2ef7e048d2c386896a0c6
+21:50:43,371 INF packaging: Verifying: python3-libcomps-0.1.11-2.el8.aarch64 1573233392 8a8fc1b08c3eb295e863ced3b49e9c503e22bdc9fcaa6be8b958add274442067
+21:50:43,373 INF packaging: Verifying: python3-libdnf-0.35.1-9.el8_1.aarch64 1576094372 9b4b379d377df15867b21aaa6fc03dfdfaa99392f69994498497f4636a02e562
+21:50:43,375 INF packaging: Verifying: python3-libs-3.6.8-15.1.el8.aarch64 1574366540 8f7f98c62904f3dd996be5fb39008a56e094a694d1decd87503f8fed767da72c
+21:50:43,377 INF packaging: Verifying: python3-pip-wheel-9.0.3-15.el8.noarch 1573239287 45192c93402f5ee029f8d9a63a36278e02a743c48ab064849469ad8153d1a555
+21:50:43,379 INF packaging: Verifying: python3-rpm-4.14.2-25.el8.aarch64 1573240096 71a4a1847e162ea824cd97f4cb999f3c6b2fddcc71dda3f629a22237bdf8d01c
+21:50:43,381 INF packaging: Verifying: python3-setuptools-wheel-39.2.0-5.el8.noarch 1573572823 fe32f87d975ed2bd5f1c854961caa05fec47f6a5f9bd2a28610be907aeb71f4e
+21:50:43,383 INF packaging: Verifying: readline-7.0-10.el8.aarch64 1557535996 ef74f2c65ed0e38dd021177d6e59fcdf7fb8de8929b7544b7a6f0709eff6562c
+21:50:43,385 INF packaging: Verifying: rootfiles-8.1-22.el8.noarch 1557588938 d967d6bbb33bf7a295a64807f81875c84e82a8ecc59b6c72fe955141b1660d39
+21:50:43,387 INF packaging: Verifying: rpm-4.14.2-25.el8.aarch64 1573240096 dca6ba2c2cfef0725198523e1f350595bd257bc247822ee60a1bb67afde9bd98
+21:50:43,388 INF packaging: Verifying: rpm-build-libs-4.14.2-25.el8.aarch64 1573240096 e8a0fd5945bbefb9101e541d14f0954da786d0f91b8f61907e15b2a12a768014
+21:50:43,390 INF packaging: Verifying: rpm-libs-4.14.2-25.el8.aarch64 1573240096 0effd0de6224f4bbf487963fc4e5466a25d3c92e14d2c29062cd3cc4683ef34a
+21:50:43,392 INF packaging: Verifying: sed-4.5-1.el8.aarch64 1557536195 fbecd3eaccc7aed98b42e88280d2ee9104c52d3329f9139b291527fc30d5fd02
+21:50:43,394 INF packaging: Verifying: setup-2.12.2-2.el8_1.1.noarch 1578074652 7beab7df092f567bc07b3dd0b99c85f85fdba9117927e87f0b42d4d2769d3e2d
+21:50:43,397 INF packaging: Verifying: shadow-utils-2:4.6-8.el8.aarch64 1573241054 4ec8423570d1cb923acc9e03a87c02065eb26e2aa67048240223fc72cdb861c5
+21:50:43,398 INF packaging: Verifying: snappy-1.1.7-5.el8.aarch64 1557589532 62df1e376189aab65976262deb5f4fb1ede20d16ce55082918c716f35572667d
+21:50:43,400 INF packaging: Verifying: sqlite-libs-3.26.0-3.el8.aarch64 1557537182 879d2b7e8c9a78b65831a8cf32bac397fafcff4f6376435a2b36f488a6d52024
+21:50:43,402 INF packaging: Verifying: squashfs-tools-4.3-19.el8.aarch64 1573241516 75922657d45adf2cd13f22c8e371fd57ed38edfa21bc68f49c6708acf583b0ce
+21:50:43,404 INF packaging: Verifying: systemd-239-18.el8_1.1.aarch64 1578075311 9e3b512cceefc98dead2b81d7b80804b3cf3cdc4c9b2d357d289c1a373917aa9
+21:50:43,406 INF packaging: Verifying: systemd-libs-239-18.el8_1.1.aarch64 1578075311 5edcc59775d92ddaf407586159560a1215d75169ffa9b30eeeb2386be5f2c686
+21:50:43,408 INF packaging: Verifying: systemd-pam-239-18.el8_1.1.aarch64 1578075311 7ddb617e2aaa90f8d5a1bb2764e792858755429809fc01c64a3e4d9f9e620c7b
+21:50:43,410 INF packaging: Verifying: systemd-udev-239-18.el8_1.1.aarch64 1578075311 01fba66c119497098edd29804620a7eff4d851774af10f3dbc2da5843c46ae74
+21:50:43,412 INF packaging: Verifying: tar-2:1.30-4.el8.aarch64 1557536685 51ee9e5981361b491a22f63223798ebfa2287af8bb6206b4f8538e945b37fcf2
+21:50:43,414 INF packaging: Verifying: tzdata-2019c-1.el8.noarch 1569937645 ef86bf42e76d2a1d9dc507c66665eb7fa1be8c7418d8d7906d853794f179449e
+21:50:43,416 INF packaging: Verifying: util-linux-2.32.1-17.el8.aarch64 1573243582 7e9b8eca0f0460106af0be542609b52721f2169e3845216f97e6507b1f0ae96f
+21:50:43,418 INF packaging: Verifying: vim-minimal-2:8.0.1763-13.el8.aarch64 1573499615 064c38a01fb786acf8ff0f8657d74077d2d6091908c20a4c41156d161893e6a4
+21:50:43,420 INF packaging: Verifying: xz-5.2.4-3.el8.aarch64 1557536539 b9a899e715019e7002600005bcb2a9dd7b089eaef9c55c3764c326d745ad681f
+21:50:43,422 INF packaging: Verifying: xz-libs-5.2.4-3.el8.aarch64 1557536539 8f141db26834b1ec60028790b130d00b14b7fda256db0df1e51b7ba8d3d40c7b
+21:50:43,424 INF packaging: Verifying: yum-4.2.7-7.el8_1.noarch 1576770263 8fbe43b831d44d00a1230c28a318d7d6afd594a43863d0dffd1c156c1493f27e
+21:50:43,426 INF packaging: Verifying: zlib-1.2.11-10.el8.aarch64 1557536543 03574b773706d8912ae43d4f62b5056bd4781e44989163231ce98c7e47a211c3
+21:50:43,428 INF packaging: Verifying: langpacks-en-1.0-12.el8.noarch 1557795722 c99db07c2548246f6b2ec98c1d2b536e40b2f4dbba39f3430044868a27985732
+21:50:43,652 INF packaging: Cleaning up downloaded packages: /tmp/dnf.package.cache
+21:50:43,664 Level 8 dnf: Cleaning up.
+21:50:43,665 INF dnf: The downloaded packages were saved in cache until the next successful transaction.
+21:50:43,666 INF dnf: You can remove cached packages by executing 'dnf clean packages'.
