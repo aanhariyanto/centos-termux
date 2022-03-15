@@ -1,4 +1,4 @@
-CENTOS TERMUX WITHOUT ROOT
+# CentOS Linux release 8.5.2111 @termux @android
 
 # Update NS
 
