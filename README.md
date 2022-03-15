@@ -6,7 +6,7 @@ echo "nameserver 8.8.8.8" >> /etc/resolv.conf && echo "nameserver 8.8.4.4" >> /e
 
 <li> TERM </li>
 
-echo "export LC_ALL=en_US.UTF-8" >> ~/.bashrc && echo "export TERM=xterm-256color" >> ~/.bashrc
+echo 'export LANG="en_US.UTF-8"' >> ~/.bashrc && echo 'export LC_MONETARY="en_US.UTF-8"' >> ~/.bashrc && echo 'export LC_PAPER="en_US.UTF-8"' >> ~/.bashrc && echo 'export LC_NAME="en_US.UTF-8"' >> ~/.bashrc && echo 'export LC_ADDRESS="en_US.UTF-8"' >> ~/.bashrc && echo 'export LC_TELEPHONE="en_US.UTF-8"' >> ~/.bashrc && echo 'export LC_MEASUREMENT="en_US.UTF-8"' >> ~/.bashrc && echo 'export LC_IDENTIFICATION="en_US.UTF-8"' >> ~/.bashrc && echo 'export LC_ALL="C"' >> ~/.bashrc && echo 'export TERM="xterm-256color"' >> ~/.bashrc
 
 <li> AppStream </li>
 
