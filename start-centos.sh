@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/bin/bash
 cd $(dirname $0)
 ## unset LD_PRELOAD in case termux-exec is installed
 unset LD_PRELOAD
@@ -15,13 +15,14 @@ fi
 command+=" -b /dev"
 command+=" -b /proc"
 command+=" -b /sys"
-#command+=" -b centos-fs/tmp:/dev/shm"
 command+=" -b centos-fs/root:/dev/shm"
-command+=" -b /data/data/com.termux"
+## uncomment the following line to have access to the home directory of termux
+#command+=" -b /data/data/com.termux/files/home:/root"
 command+=" -b /:/host-rootfs"
-command+=" -b /sdcard"
-command+=" -b /storage"
-command+=" -b /mnt"
+## uncomment the following line to mount /sdcard directly to / 
+#command+=" -b /sdcard"
+#command+=" -b /storage/emulated/0"
+#command+=" -b /mnt"
 command+=" -w /root /usr/bin/env"
 command+=" /usr/bin/env -i"
 command+=" -i HOME=/root"
